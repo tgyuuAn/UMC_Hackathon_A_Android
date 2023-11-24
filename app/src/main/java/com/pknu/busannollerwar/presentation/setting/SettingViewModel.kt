@@ -15,5 +15,7 @@ class SettingViewModel @Inject constructor() : ViewModel() {
     private val _eventFlow = MutableSharedFlow<SettingEvent>()
     val eventFlow get() = _eventFlow.asSharedFlow()
 
+    fun navigateToNotice() = event(SettingEvent.NavigateToNotice)
+
     private fun event(event: SettingEvent) = viewModelScope.launch { _eventFlow.emit(event) }
 }
