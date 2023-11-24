@@ -3,13 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <import type="com.pknu.busannollerwar.presentation.home.Contents"/>
+        <variable
+            name="viewModel"
+            type="com.pknu.busannollerwar.presentation.home.HomeViewModel" />
     </data>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp">
+        android:layout_marginHorizontal="20dp"
+        android:onClick="@{()->viewModel.navigateToContents(Contents.HANBOK)}">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
