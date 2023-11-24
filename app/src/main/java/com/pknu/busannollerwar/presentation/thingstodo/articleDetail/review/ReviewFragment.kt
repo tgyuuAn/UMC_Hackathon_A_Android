@@ -13,6 +13,7 @@ import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.pknu.busannollerwar.R
 import com.pknu.busannollerwar.databinding.FragmentReiviewBinding
 import com.pknu.busannollerwar.presentation.thingstodo.articleDetail.ArticleDetailFragmentArgs
 import com.pknu.busannollerwar.presentation.util.BaseFragment
@@ -26,12 +27,10 @@ class ReviewFragment : BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
     override val fragmentViewModel: ReviewViewModel by viewModels()
     val PICK_IMAGE = 1  // 아무 정수 값으로 설정
 
-    private var selectedImageUri: Uri? = null
-    private var nowIndex: Int = 0
-
     val reviewListAdapter: ReviewListAdapter by lazy {
         ReviewListAdapter(fragmentViewModel, requireContext())
     }
+
     val imageList = mutableListOf<Pair<Int, String>>(0 to "", 1 to "", 2 to "", 3 to "")
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -46,6 +45,8 @@ class ReviewFragment : BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
 
         viewModel = fragmentViewModel.apply {
             repeatOnStarted { eventFlow.collect { handleEvent(it) } }
+            repeatOnStarted { rateScore.collect { handleRate(it) } }
+            repeatOnStarted { selectedImageUri.collect { handleImageUri(it) } }
         }
         setRecyclerView()
         reviewListAdapter.submitList(imageList)
@@ -64,8 +65,67 @@ class ReviewFragment : BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
         }
     }
 
+    private fun handleImageUri(uri : String){
+        Log.d("test","이미지 URI :" + uri)
+        Log.d("test",imageList.toString())
+        imageList[fragmentViewModel.nowIndex.value] = fragmentViewModel.nowIndex.value to uri
+        reviewListAdapter.submitList(imageList.toList())
+    }
+
     private fun handleEvent(event: ReviewEvent) = when (event) {
-        is ReviewEvent.OpenGallery -> openGallery(event.idx)
+        is ReviewEvent.OpenGallery -> openGallery()
+    }
+
+    private fun handleRate(score: Int) {
+        when (score) {
+            1 -> binding.apply {
+                star1Iv.setImageResource(R.drawable.star_yellow)
+                star2Iv.setImageResource(R.drawable.star_gray)
+                star3Iv.setImageResource(R.drawable.star_gray)
+                star4Iv.setImageResource(R.drawable.star_gray)
+                star5Iv.setImageResource(R.drawable.star_gray)
+            }
+
+            2 -> binding.apply {
+                star1Iv.setImageResource(R.drawable.star_yellow)
+                star2Iv.setImageResource(R.drawable.star_yellow)
+                star3Iv.setImageResource(R.drawable.star_gray)
+                star4Iv.setImageResource(R.drawable.star_gray)
+                star5Iv.setImageResource(R.drawable.star_gray)
+            }
+
+            3 -> binding.apply {
+                star1Iv.setImageResource(R.drawable.star_yellow)
+                star2Iv.setImageResource(R.drawable.star_yellow)
+                star3Iv.setImageResource(R.drawable.star_yellow)
+                star4Iv.setImageResource(R.drawable.star_gray)
+                star5Iv.setImageResource(R.drawable.star_gray)
+            }
+
+            4 -> binding.apply {
+                star1Iv.setImageResource(R.drawable.star_yellow)
+                star2Iv.setImageResource(R.drawable.star_yellow)
+                star3Iv.setImageResource(R.drawable.star_yellow)
+                star4Iv.setImageResource(R.drawable.star_yellow)
+                star5Iv.setImageResource(R.drawable.star_gray)
+            }
+
+            5 -> binding.apply {
+                star1Iv.setImageResource(R.drawable.star_yellow)
+                star2Iv.setImageResource(R.drawable.star_yellow)
+                star3Iv.setImageResource(R.drawable.star_yellow)
+                star4Iv.setImageResource(R.drawable.star_yellow)
+                star5Iv.setImageResource(R.drawable.star_yellow)
+            }
+
+            else -> binding.apply {
+                star1Iv.setImageResource(R.drawable.star_gray)
+                star2Iv.setImageResource(R.drawable.star_gray)
+                star3Iv.setImageResource(R.drawable.star_gray)
+                star4Iv.setImageResource(R.drawable.star_gray)
+                star5Iv.setImageResource(R.drawable.star_gray)
+            }
+        }
     }
 
     private fun setRecyclerView() = binding.galleryRv.apply {
@@ -75,21 +135,18 @@ class ReviewFragment : BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
         addItemDecoration(ReviewDecoration(requireContext()))
     }
 
-    private fun openGallery(idx: Int) {
-        nowIndex = idx
+    private fun openGallery() {
         val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         startActivityForResult(intent, PICK_IMAGE)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        Log.d("test", data?.data.toString())
+        Log.d("test", "결과"+data?.data.toString())
 
         if (requestCode == PICK_IMAGE && resultCode == Activity.RESULT_OK && data != null) {
-            Log.d("test", nowIndex.toString())
-            selectedImageUri = data.data!!
-            imageList[nowIndex] = nowIndex to selectedImageUri.toString()
-            reviewListAdapter.submitList(imageList.toList())
+            Log.d("test", fragmentViewModel.nowIndex.toString())
+            fragmentViewModel.setImageUri(data.data!!.toString())
         }
     }
 }

@@ -118,6 +118,7 @@
                 android:layout_height="27.4dp"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="7dp"
+                android:onClick="@{()->viewModel.rateReview(1)}"
                 android:src="@drawable/star_gray" />
 
             <ImageView
@@ -125,6 +126,7 @@
                 android:layout_width="27.4dp"
                 android:layout_height="27.4dp"
                 android:layout_marginTop="7dp"
+                android:onClick="@{()->viewModel.rateReview(2)}"
                 android:src="@drawable/star_gray" />
 
             <ImageView
@@ -132,6 +134,7 @@
                 android:layout_width="27.4dp"
                 android:layout_height="27.4dp"
                 android:layout_marginTop="7dp"
+                android:onClick="@{()->viewModel.rateReview(3)}"
                 android:src="@drawable/star_gray" />
 
             <ImageView
@@ -139,6 +142,7 @@
                 android:layout_width="27.4dp"
                 android:layout_height="27.4dp"
                 android:layout_marginTop="7dp"
+                android:onClick="@{()->viewModel.rateReview(4)}"
                 android:src="@drawable/star_gray" />
 
             <ImageView
@@ -146,6 +150,7 @@
                 android:layout_width="27.4dp"
                 android:layout_height="27.4dp"
                 android:layout_marginTop="7dp"
+                android:onClick="@{()->viewModel.rateReview(5)}"
                 android:src="@drawable/star_gray" />
         </LinearLayout>
 

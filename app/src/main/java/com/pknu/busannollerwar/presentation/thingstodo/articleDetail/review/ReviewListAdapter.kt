@@ -20,11 +20,13 @@ class ReviewViewHolder(
         binding.apply {
             viewModel = fragmentViewModel
             index = idx
-            Log.d("test", item.toString())
+            Log.d("test",idx.toString())
+
             if (item != "") {
                 Log.d("test", "성공")
                 ivItemImage.visibility = View.VISIBLE
                 tvPlus.visibility = View.GONE
+
                 Glide.with(context).load(item)
                     .into(ivItemImage)
             } else {
