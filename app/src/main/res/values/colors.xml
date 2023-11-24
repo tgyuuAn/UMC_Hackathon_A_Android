@@ -2,6 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="main">#D6F3FF</color>
     <color name="progressBar_value">#00D1FF</color>
     <color name="progressBar_default">@color/white</color>
 </resources>
