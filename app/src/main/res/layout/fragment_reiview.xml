@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.pknu.busannollerwar.presentation.thingstodo.review.ReviewViewModel" />
+            type="com.pknu.busannollerwar.presentation.thingstodo.articleDetail.review.ReviewViewModel" />
 
         <variable
             name="article"
@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/main"
-        tools:context=".presentation.thingstodo.review.ReviewFragment">
+        tools:context=".presentation.thingstodo.articleDetail.review.ReviewFragment">
 
         <TextView
             android:id="@+id/write_review_tv"

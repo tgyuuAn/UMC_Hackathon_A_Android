@@ -52,7 +52,7 @@
         android:label="ContentsFragment" />
     <fragment
         android:id="@+id/reviewFragment"
-        android:name="com.pknu.busannollerwar.presentation.thingstodo.review.ReviewFragment"
+        android:name="com.pknu.busannollerwar.presentation.thingstodo.articleDetail.review.ReviewFragment"
         android:label="ReviewFragment">
         <argument
             android:name="article"

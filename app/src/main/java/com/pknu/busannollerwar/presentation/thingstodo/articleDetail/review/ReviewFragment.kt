@@ -1,4 +1,4 @@
-package com.pknu.busannollerwar.presentation.thingstodo.review
+package com.pknu.busannollerwar.presentation.thingstodo.articleDetail.review
 
 import android.app.Activity
 import android.content.Intent
