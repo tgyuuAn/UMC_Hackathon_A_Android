@@ -5,10 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.pknu.busannollerwar.databinding.ItemImageCardBinding
-import com.pknu.busannollerwar.presentation.home.HomeViewHolder
+import com.pknu.busannollerwar.databinding.ItemThingsToDoImageCardBinding
 
-class ThingsToDoViewHolder(val binding: ItemImageCardBinding) : RecyclerView.ViewHolder(binding.root) {
+class ThingsToDoViewHolder(val binding: ItemThingsToDoImageCardBinding) : RecyclerView.ViewHolder(binding.root) {
     fun bind() {
 
     }
@@ -26,7 +25,7 @@ class ThingsToDoListAdapter : ListAdapter<Int, ThingsToDoViewHolder>(object :
 }) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ThingsToDoViewHolder {
         val binding =
-            ItemImageCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ItemThingsToDoImageCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ThingsToDoViewHolder(binding)
     }
 
