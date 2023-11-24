@@ -41,19 +41,19 @@
     <fragment
         android:id="@+id/articleDetailFragment"
         android:name="com.pknu.busannollerwar.presentation.thingstodo.articleDetail.ArticleDetailFragment"
-        android:label="ArticleDetailFragment" />
-    <fragment
-        android:id="@+id/contentsFragment"
-        android:name="com.pknu.busannollerwar.presentation.home.contents.ContentsFragment"
-        android:label="ContentsFragment" >
+        android:label="ArticleDetailFragment">
         <argument
             android:name="article"
             app:argType="com.pknu.busannollerwar.data.model.Article" />
     </fragment>
     <fragment
+        android:id="@+id/contentsFragment"
+        android:name="com.pknu.busannollerwar.presentation.home.contents.ContentsFragment"
+        android:label="ContentsFragment" />
+    <fragment
         android:id="@+id/reviewFragment"
         android:name="com.pknu.busannollerwar.presentation.thingstodo.review.ReviewFragment"
-        android:label="ReviewFragment" >
+        android:label="ReviewFragment">
         <argument
             android:name="article"
             app:argType="com.pknu.busannollerwar.data.model.Article" />

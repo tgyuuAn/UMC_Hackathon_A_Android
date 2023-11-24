@@ -8,29 +8,44 @@ import android.provider.MediaStore
 import android.view.View
 import android.widget.ImageView
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.pknu.busannollerwar.databinding.FragmentReiviewBinding
+import com.pknu.busannollerwar.presentation.thingstodo.articleDetail.ArticleDetailFragmentArgs
 import com.pknu.busannollerwar.presentation.util.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ReviewFragment : BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
-    FragmentReiviewBinding::inflate) {
+    FragmentReiviewBinding::inflate
+) {
     override val fragmentViewModel: ReviewViewModel by viewModels()
     val PICK_IMAGE = 1  // 아무 정수 값으로 설정
+
+    val reviewListAdapter: ReviewListAdapter by lazy { ReviewListAdapter() }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val reviewListAdapter = ReviewListAdapter()
-        binding.galleryRv.adapter = reviewListAdapter
-        binding.galleryRv.layoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
-        binding.galleryRv.setOnClickListener() {
+        setBinding()
+    }
+
+    private fun setBinding() = binding.apply {
+        val args: ArticleDetailFragmentArgs by navArgs()
+        val nowArticle = args.article
+        article = nowArticle
+    }
+
+    private fun setRecyclerView() = binding.galleryRv.apply {
+        adapter = reviewListAdapter
+        layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+        setOnClickListener() {
             openGallery()
         }
-
     }
 
     private fun openGallery() {

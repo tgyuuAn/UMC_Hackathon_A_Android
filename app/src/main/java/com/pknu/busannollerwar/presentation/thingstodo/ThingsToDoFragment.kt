@@ -3,7 +3,9 @@ package com.pknu.busannollerwar.presentation.thingstodo
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.pknu.busannollerwar.R
 import com.pknu.busannollerwar.databinding.FragmentThingsToDoBinding
 import com.pknu.busannollerwar.presentation.util.BaseFragment
 import com.pknu.busannollerwar.presentation.util.repeatOnStarted
@@ -33,7 +35,7 @@ class ThingsToDoFragment :
 
     private fun handleEvent(event: ThingsToDoEvent) {
         when (event) {
-            is ThingsToDoEvent.NavigateToArticleDetail -> {}
+            is ThingsToDoEvent.NavigateToArticleDetail -> findNavController().navigate(R.id.articleDetailFragment)
         }
     }
 
