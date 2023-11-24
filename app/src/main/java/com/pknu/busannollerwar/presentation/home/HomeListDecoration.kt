@@ -19,7 +19,7 @@ class HomeListDecoration(private val context: Context) : RecyclerView.ItemDecora
 
         if (index != 0) {
             //좌,상,우,하
-            outRect.set(0, 20.dpToPx(), 0, 0)
+            outRect.set(0, 25.dpToPx(), 0, 0)
         }
     }
 }
