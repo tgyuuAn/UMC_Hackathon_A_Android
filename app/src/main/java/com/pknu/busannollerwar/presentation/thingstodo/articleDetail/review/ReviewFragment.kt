@@ -27,8 +27,6 @@ class ReviewFragment : BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
         setBinding()
     }
 
@@ -43,7 +41,7 @@ class ReviewFragment : BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
         layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
-        setOnClickListener() {
+        setOnClickListener {
             openGallery()
         }
     }

@@ -5,32 +5,36 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.pknu.busannollerwar.data.model.Article
 import com.pknu.busannollerwar.databinding.ItemThingsToDoImageCardBinding
 
-class ThingsToDoViewHolder(val binding: ItemThingsToDoImageCardBinding) : RecyclerView.ViewHolder(binding.root) {
-    fun bind() {
+class ThingsToDoViewHolder(
+    private val binding: ItemThingsToDoImageCardBinding,
+    private val fragmentViewModel: ThingsToDoViewModel,
+) : RecyclerView.ViewHolder(binding.root) {
 
+    fun bind(item : Article) {
+        binding.apply {
+            article = item
+            viewModel = fragmentViewModel
+        }
     }
 }
 
-class ThingsToDoListAdapter : ListAdapter<Int, ThingsToDoViewHolder>(object :
-    DiffUtil.ItemCallback<Int>() {
-    override fun areItemsTheSame(oldItem: Int, newItem: Int): Boolean {
-        return oldItem == newItem
-    }
-
-    override fun areContentsTheSame(oldItem: Int, newItem: Int): Boolean {
-        return oldItem == newItem
-    }
-}) {
+class ThingsToDoListAdapter(private val viewModel: ThingsToDoViewModel) :
+    ListAdapter<Article, ThingsToDoViewHolder>(object :
+        DiffUtil.ItemCallback<Article>() {
+        override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean = oldItem == newItem
+        override fun areContentsTheSame(oldItem: Article, newItem: Article): Boolean = oldItem == newItem
+    }) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ThingsToDoViewHolder {
-        val binding =
-            ItemThingsToDoImageCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ThingsToDoViewHolder(binding)
+        val binding = ItemThingsToDoImageCardBinding.inflate(
+                LayoutInflater.from(parent.context), parent,false)
+        return ThingsToDoViewHolder(binding, viewModel)
     }
 
     override fun onBindViewHolder(holder: ThingsToDoViewHolder, position: Int) {
-        holder.bind()
+        holder.bind(getItem(position))
     }
 }
 

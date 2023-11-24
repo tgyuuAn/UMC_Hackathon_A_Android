@@ -5,9 +5,8 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.pknu.busannollerwar.R
+import com.pknu.busannollerwar.data.model.Article
 import com.pknu.busannollerwar.databinding.FragmentThingsToDoBinding
-import com.pknu.busannollerwar.presentation.thingstodo.articleDetail.ArticleDetailFragmentDirections
 import com.pknu.busannollerwar.presentation.util.BaseFragment
 import com.pknu.busannollerwar.presentation.util.repeatOnStarted
 import dagger.hilt.android.AndroidEntryPoint
@@ -16,7 +15,11 @@ import dagger.hilt.android.AndroidEntryPoint
 class ThingsToDoFragment :
     BaseFragment<FragmentThingsToDoBinding, ThingsToDoViewModel>(FragmentThingsToDoBinding::inflate) {
     override val fragmentViewModel: ThingsToDoViewModel by viewModels()
-    val thingsToDoListAdapter: ThingsToDoListAdapter by lazy { ThingsToDoListAdapter() }
+    val thingsToDoListAdapter: ThingsToDoListAdapter by lazy {
+        ThingsToDoListAdapter(
+            fragmentViewModel
+        )
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -31,13 +34,23 @@ class ThingsToDoFragment :
         }
 
         setRecyclerView()
-        thingsToDoListAdapter.submitList(listOf(1, 2, 3, 4, 5))
+        thingsToDoListAdapter.submitList(
+            listOf(
+                Article(),
+                Article(),
+                Article(),
+                Article(),
+                Article(),
+                Article()
+            )
+        )
     }
 
     private fun handleEvent(event: ThingsToDoEvent) {
         when (event) {
             is ThingsToDoEvent.NavigateToArticleDetail -> {
-                val action = ThingsToDoFragmentDirections.actionGlobalArticleDetailFragment(event.article)
+                val action =
+                    ThingsToDoFragmentDirections.actionGlobalArticleDetailFragment(event.article)
                 findNavController().navigate(action)
             }
         }
@@ -48,5 +61,4 @@ class ThingsToDoFragment :
         layoutManager = LinearLayoutManager(requireActivity())
         addItemDecoration(ThingsToDoListDecoration(requireContext()))
     }
-
 }
