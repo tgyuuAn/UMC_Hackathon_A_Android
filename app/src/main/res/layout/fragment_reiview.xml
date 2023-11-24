@@ -40,14 +40,33 @@
             android:layout_marginTop="39dp"
             app:layout_constraintTop_toTopOf="@id/write_review_tv">
 
-            <ImageView
-                android:id="@+id/picture_iv"
-                android:layout_width="300dp"
-                android:layout_height="168dp"
-                android:layout_gravity="center"
-                android:src="@drawable/kakaotalk"
-                android:scaleType="fitXY"
-                app:layout_constraintTop_toBottomOf="@id/write_review_tv" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@color/black" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_gravity="bottom"
+                    android:src="@drawable/ic_image_title_background" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="32dp"
+                    android:gravity="center_vertical"
+                    android:text="@{article.title}"
+                    android:textSize="20sp" />
+            </androidx.cardview.widget.CardView>
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -61,29 +80,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|start"
-                android:layout_marginStart="60dp"
-                android:text="광안리해수욕장"
-                android:textStyle="bold"
+
                 android:textColor="@color/black"
                 android:textSize="20sp" />
-
         </FrameLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/gallery_rv"
             android:layout_width="match_parent"
             android:layout_height="110dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@id/picture_layout"
-            tools:listitem="@layout/item_gallery" />
+            tools:listitem="@layout/item_article_review_image" />
 
         <LinearLayout
             android:id="@+id/start_point_layout"
             android:layout_width="match_parent"
             android:layout_height="39dp"
-            android:layout_marginStart="14dp"
+            android:layout_marginHorizontal="20dp"
             android:layout_marginTop="20dp"
             android:background="@color/white"
             android:orientation="horizontal"
@@ -94,7 +111,7 @@
                 android:id="@+id/star_rating_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/star_rating"
                 android:textColor="@color/black"
@@ -105,8 +122,9 @@
                 android:id="@+id/star1_iv"
                 android:layout_width="27.4dp"
                 android:layout_height="27.4dp"
-                android:layout_marginStart="25dp"
+                android:layout_marginStart="80dp"
                 android:layout_marginTop="7dp"
+                android:onClick="@{()->viewModel.rateReview(1)}"
                 android:src="@drawable/star_gray" />
 
             <ImageView
@@ -114,6 +132,7 @@
                 android:layout_width="27.4dp"
                 android:layout_height="27.4dp"
                 android:layout_marginTop="7dp"
+                android:onClick="@{()->viewModel.rateReview(2)}"
                 android:src="@drawable/star_gray" />
 
             <ImageView
@@ -121,6 +140,7 @@
                 android:layout_width="27.4dp"
                 android:layout_height="27.4dp"
                 android:layout_marginTop="7dp"
+                android:onClick="@{()->viewModel.rateReview(3)}"
                 android:src="@drawable/star_gray" />
 
             <ImageView
@@ -128,6 +148,7 @@
                 android:layout_width="27.4dp"
                 android:layout_height="27.4dp"
                 android:layout_marginTop="7dp"
+                android:onClick="@{()->viewModel.rateReview(4)}"
                 android:src="@drawable/star_gray" />
 
             <ImageView
@@ -135,19 +156,40 @@
                 android:layout_width="27.4dp"
                 android:layout_height="27.4dp"
                 android:layout_marginTop="7dp"
+                android:onClick="@{()->viewModel.rateReview(5)}"
                 android:src="@drawable/star_gray" />
-
         </LinearLayout>
 
         <EditText
-            android:id="@+id/review_et"
+            android:id="@+id/edt_review"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginStart="14dp"
-            android:layout_marginTop="11dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
             android:background="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="top"
+            android:hint='@{article.title + "은(는) 어떠셨나요 리뷰를 남겨주세요. (최소 20자 이상)"}'
+            android:imeOptions="actionDone"
+            android:padding="10dp"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/btn_submit"
             app:layout_constraintTop_toBottomOf="@id/start_point_layout" />
+
+        <TextView
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/ic_button"
+            android:gravity="center"
+            android:onClick="@{()->viewModel.submitReview()}"
+            android:text="작성 완료"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

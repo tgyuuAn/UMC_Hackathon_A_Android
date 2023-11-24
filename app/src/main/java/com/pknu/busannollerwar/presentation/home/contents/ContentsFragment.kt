@@ -24,7 +24,7 @@ class ContentsFragment : BaseFragment<FragmentContentsBinding, ContentsViewModel
     private fun setBinding() = binding.apply {
         val args : ContentsFragmentArgs by navArgs()
         val content = args.content
-        
+
         viewModel = fragmentViewModel.apply {
             viewLifecycleOwner.apply {
                 repeatOnStarted { eventFlow.collect { handleEvent(it) } }
