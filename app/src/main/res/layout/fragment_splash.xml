@@ -20,7 +20,7 @@
             android:id="@+id/LL_splash_logo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="20dp"
             android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -40,10 +40,11 @@
         </LinearLayout>
 
         <ImageView
+            android:id="@+id/iv_splash_boogie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:src="@drawable/ic_boogie"
-            app:layout_constraintBottom_toTopOf="@id/tv_progress_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/LL_splash_logo" />
@@ -52,12 +53,12 @@
             android:id="@+id/tv_progress_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
+            android:layout_marginTop="100dp"
             android:text="여행 짐 싸는 중..."
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@id/progressBar_splash"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_splash_boogie" />
 
         <ProgressBar
             android:id="@+id/progressBar_splash"
@@ -65,11 +66,11 @@
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginTop="30dp"
             android:max="100"
             android:progress="@{viewModel.progress}"
             android:progressDrawable="@drawable/item_progressbar"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_progress_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
