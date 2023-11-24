@@ -10,47 +10,59 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat.recreate
+import androidx.fragment.app.viewModels
 import com.pknu.busannollerwar.R
 import com.pknu.busannollerwar.databinding.FragmentLanguageSelectionBinding
+import com.pknu.busannollerwar.databinding.FragmentSplashBinding
+import com.pknu.busannollerwar.presentation.util.BaseFragment
+import com.pknu.busannollerwar.presentation.util.repeatOnStarted
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Locale
 
 @AndroidEntryPoint
-class LanguageSelectionFragment : Fragment() {
+class LanguageSelectionFragment :
+    BaseFragment<FragmentLanguageSelectionBinding, LanguageSelectionViewModel>(
+        FragmentLanguageSelectionBinding::inflate
+    ) {
 
-    lateinit var binding : FragmentLanguageSelectionBinding
+    override val fragmentViewModel: LanguageSelectionViewModel by viewModels()
 
-//    val korean = binding.languageKoreaBtn
-//    val english = binding.languageEnglishBtn
     private lateinit var language_code: String
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         val sharedPreferences = activity?.getSharedPreferences("Settings", Activity.MODE_PRIVATE)
         val language = sharedPreferences?.getString("language", "")
+
         if (language != null) {
             language_code = language
         }
 
         setLocate(language_code)
+        setBinding()
+    }
 
-        binding = FragmentLanguageSelectionBinding.inflate(inflater,container, false)
-
-        binding.languageKoreaBtn.setOnClickListener {
-
+    private fun setBinding() = binding.apply {
+        languageKoreaBtn.setOnClickListener {
             setLocate("ko")
             activity?.recreate()
-
         }
 
-        binding.languageEnglishBtn.setOnClickListener {
+        languageEnglishBtn.setOnClickListener {
             setLocate("en")
             activity?.recreate()
         }
 
-        return binding.root
+        viewModel = fragmentViewModel.apply {
+            viewLifecycleOwner.apply {
+                repeatOnStarted { eventFlow.collect { handleEvent(it) } }
+            }
+        }
+    }
+
+    private fun handleEvent(event: LanguageSelectionEvent) = when (event) {
+        is LanguageSelectionEvent.NavigateToHome -> {}
     }
 
     //Locale 객체를 생성특정 지리적, 정치적 또는 문화적 영역을 나타냅니다.
