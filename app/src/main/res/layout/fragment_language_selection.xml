@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".languageselection.LanguageSelectionFragment">
+    tools:context=".presentation.languageselection.LanguageSelectionFragment">
 
     <TextView
         android:id="@+id/appName_tv"
@@ -22,8 +22,8 @@
         android:id="@+id/language_selection_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="언어 선택"
-        android:textSize="30sp"
+        android:text="@string/Language_Selection"
+        android:textSize="50sp"
         android:layout_marginTop="30dp"
         app:layout_constraintBottom_toTopOf="@id/button_layout"
         app:layout_constraintEnd_toEndOf="parent"

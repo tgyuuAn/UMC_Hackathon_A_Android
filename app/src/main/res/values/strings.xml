@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">부산 놀러와</string>
+
     <string name="language_korea">한글</string>
     <string name="language_english">영어</string>
+    <string name="Language_Selection">언어</string>
+
+    <string name="home">홈</string>
+    <string name="profile">마이 페이지</string>
+    <string name="setting">설정</string>
+
 </resources>

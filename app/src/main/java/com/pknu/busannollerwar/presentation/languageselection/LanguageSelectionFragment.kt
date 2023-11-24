@@ -1,4 +1,4 @@
-package com.pknu.busannollerwar.languageselection
+package com.pknu.busannollerwar.presentation.languageselection
 
 import android.app.Activity
 import android.content.Context
@@ -12,9 +12,10 @@ import android.view.ViewGroup
 import androidx.core.app.ActivityCompat.recreate
 import com.pknu.busannollerwar.R
 import com.pknu.busannollerwar.databinding.FragmentLanguageSelectionBinding
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.Locale
 
-
+@AndroidEntryPoint
 class LanguageSelectionFragment : Fragment() {
 
     lateinit var binding : FragmentLanguageSelectionBinding
@@ -32,6 +33,8 @@ class LanguageSelectionFragment : Fragment() {
         if (language != null) {
             language_code = language
         }
+
+        setLocate(language_code)
 
         binding = FragmentLanguageSelectionBinding.inflate(inflater,container, false)
 

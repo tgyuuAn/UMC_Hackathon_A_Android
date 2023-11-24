@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/languageSelectionFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.pknu.busannollerwar.presentation.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.pknu.busannollerwar.presentation.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.pknu.busannollerwar.presentation.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_setting" />
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.pknu.busannollerwar.presentation.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" />
+    <fragment
+        android:id="@+id/languageSelectionFragment"
+        android:name="com.pknu.busannollerwar.presentation.languageselection.LanguageSelectionFragment"
+        android:label="fragment_language_selection"
+        tools:layout="@layout/fragment_language_selection" />
+</navigation>
