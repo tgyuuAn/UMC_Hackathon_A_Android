@@ -40,7 +40,7 @@
                 android:layout_gravity="bottom"
                 android:layout_marginStart="32dp"
                 android:gravity="center_vertical"
-                android:text="K-POP 댄스 클래스"
+                android:text="@string/kpop_dance"
                 android:textSize="20sp" />
 
             <ImageView

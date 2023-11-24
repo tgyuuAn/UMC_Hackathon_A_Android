@@ -39,7 +39,7 @@
                 android:layout_gravity="bottom"
                 android:layout_marginStart="32dp"
                 android:gravity="center_vertical"
-                android:text="한복 체험"
+                android:text="@string/hanbok"
                 android:textSize="20sp" />
 
             <ImageView

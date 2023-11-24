@@ -40,7 +40,7 @@
                 android:layout_gravity="bottom"
                 android:layout_marginStart="32dp"
                 android:gravity="center_vertical"
-                android:text="한식 쿠킹 클래스"
+                android:text="@string/cooking"
                 android:textSize="20sp" />
 
             <ImageView
