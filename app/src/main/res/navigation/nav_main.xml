@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_main">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/aricleFragment">
 
+    <fragment
+        android:id="@+id/aricleFragment"
+        android:name="com.pknu.busannollerwar.presentation.AricleFragment"
+        android:label="fragment_aricle"
+        tools:layout="@layout/fragment_aricle" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.pknu.busannollerwar.presentation.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.pknu.busannollerwar.presentation.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
