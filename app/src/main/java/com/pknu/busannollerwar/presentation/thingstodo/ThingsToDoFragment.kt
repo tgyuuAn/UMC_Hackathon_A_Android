@@ -33,7 +33,7 @@ class ThingsToDoFragment :
 
     private fun handleEvent(event: ThingsToDoEvent) {
         when (event) {
-            else -> {}
+            is ThingsToDoEvent.NavigateToArticleDetail -> {}
         }
     }
 

@@ -4,18 +4,15 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.pknu.busannollerwar.presentation.thingstodo.articleDetail.ArticleDetailViewModel" />
     </data>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.home.contents.ContentsFragment">
-
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+        tools:context=".presentation.thingstodo.articleDetail.ArticleDetailFragment">
 
     </FrameLayout>
 </layout>
