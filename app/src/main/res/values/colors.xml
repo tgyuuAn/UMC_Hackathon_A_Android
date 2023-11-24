@@ -11,4 +11,5 @@
     <color name="progressBar_default">@color/white</color>
 
     <color name="blue_text">#00D1FF</color>
+    <color name="btn_color">#1890FF</color>
 </resources>

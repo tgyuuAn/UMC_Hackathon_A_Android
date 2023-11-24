@@ -68,13 +68,19 @@
                     android:textSize="20sp" />
             </androidx.cardview.widget.CardView>
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="60dp"
+                android:src="@drawable/ic_image_title_background" />
+
             <TextView
                 android:id="@+id/place_name_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|start"
-                android:layout_marginStart="41dp"
-                android:text="@{article.title}"
+
                 android:textColor="@color/black"
                 android:textSize="20sp" />
         </FrameLayout>

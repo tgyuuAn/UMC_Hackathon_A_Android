@@ -23,7 +23,7 @@ import com.pknu.busannollerwar.presentation.util.repeatOnStarted
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ReviewFragment : BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
+class ReviewFragment :BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
     FragmentReiviewBinding::inflate
 ) {
     override val fragmentViewModel: ReviewViewModel by viewModels()
@@ -38,6 +38,10 @@ class ReviewFragment : BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setBinding()
+
+        binding.pictureIv.setOnClickListener {
+            openGallery()
+        }
     }
 
     private fun setBinding() = binding.apply {
@@ -133,6 +137,7 @@ class ReviewFragment : BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
             }
         }
     }
+
 
     private fun setRecyclerView() = binding.galleryRv.apply {
         adapter = reviewListAdapter

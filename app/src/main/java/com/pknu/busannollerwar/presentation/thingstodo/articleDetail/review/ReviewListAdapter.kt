@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.pknu.busannollerwar.databinding.ItemGalleryBinding
+import com.pknu.busannollerwar.presentation.thingstodo.articledetail.review.OnItemClickListener
 import com.bumptech.glide.Glide
 import com.pknu.busannollerwar.databinding.ItemArticleReviewImageBinding
 
@@ -35,6 +37,8 @@ class ReviewViewHolder(
             }
         }
     }
+
+
 }
 
 class ReviewListAdapter(
