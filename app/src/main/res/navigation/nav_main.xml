@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/aricleFragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/aricleFragment"
-        android:name="com.pknu.busannollerwar.presentation.AricleFragment"
+        android:name="com.pknu.busannollerwar.presentation.ArticleFragment"
         android:label="fragment_aricle"
-        tools:layout="@layout/fragment_aricle" />
+        tools:layout="@layout/fragment_article" />
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.pknu.busannollerwar.presentation.HomeFragment"
@@ -20,4 +20,9 @@
         android:name="com.pknu.busannollerwar.presentation.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.pknu.busannollerwar.presentation.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" />
 </navigation>
