@@ -15,9 +15,19 @@
     <string name="withdrawl">회원탈퇴</string>
 
     <string name="home_title">이달의 콘텐츠</string>
+    <string name="my_coupon">내 쿠폰</string>
+    <string name="my_coupon_usage_history">쿠폰 사용 내역</string>
+    <string name="my_travel_history">내 여행 여정</string>
+    <string name="my_review">내 리뷰 모아보기</string>
+
+    <string name="update">다른 언어(일본어, 중국어 등)는\\n 추후에 업데이트될 예정입니다.</string>
+   <string name="review_write">리뷰 쓰기</string>
+    <string name="star_rating">별점 매기기</string>
+
     <string name="language_english">English</string>
 
     <string name="kpop_dance">K-POP 댄스 원데이 클래스</string>
     <string name="cooking">한식 원데이 쿠킹 클래스</string>
     <string name="hanbok">한복 체험</string>
+>>>>>>> e06e76914793525b45dab91ac2ee69c0e9e3f615
 </resources>
