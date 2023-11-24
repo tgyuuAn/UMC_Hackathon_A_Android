@@ -16,4 +16,8 @@
 
     <string name="home_title">이달의 콘텐츠</string>
     <string name="language_english">English</string>
+
+    <string name="kpop_dance">K-POP 댄스 원데이 클래스</string>
+    <string name="cooking">한식 원데이 쿠킹 클래스</string>
+    <string name="hanbok">한복 체험</string>
 </resources>
