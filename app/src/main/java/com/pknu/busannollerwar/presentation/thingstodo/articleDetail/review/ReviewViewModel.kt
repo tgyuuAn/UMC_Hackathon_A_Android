@@ -15,7 +15,7 @@ class ReviewViewModel @Inject constructor() : ViewModel() {
     private val _eventFlow = MutableSharedFlow<ReviewEvent>()
     val eventFlow get() = _eventFlow.asSharedFlow()
 
-    fun openGallery(idx : Int) = event(ReviewEvent.OpenGallery)
+    fun openGallery(idx : Int) = event(ReviewEvent.OpenGallery(idx))
 
     private fun event(event: ReviewEvent) = viewModelScope.launch { _eventFlow.emit(event) }
 }

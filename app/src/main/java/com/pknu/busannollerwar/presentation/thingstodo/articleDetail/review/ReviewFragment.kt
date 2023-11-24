@@ -46,6 +46,7 @@ class ReviewFragment : BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
             repeatOnStarted { eventFlow.collect { handleEvent(it) } }
         }
         setRecyclerView()
+        reviewListAdapter.submitList(imageList)
     }
 
     private fun handleEvent(event: ReviewEvent) = when (event) {

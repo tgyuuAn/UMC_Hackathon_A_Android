@@ -64,7 +64,8 @@
             android:id="@+id/gallery_rv"
             android:layout_width="match_parent"
             android:layout_height="110dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@id/picture_layout"
@@ -85,7 +86,7 @@
                 android:id="@+id/star_rating_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/star_rating"
                 android:textColor="@color/black"
@@ -127,7 +128,6 @@
                 android:layout_height="27.4dp"
                 android:layout_marginTop="7dp"
                 android:src="@drawable/star_gray" />
-
         </LinearLayout>
 
         <EditText
@@ -137,6 +137,7 @@
             android:layout_marginStart="14dp"
             android:layout_marginTop="11dp"
             android:background="@color/white"
+            android:hint='@{article.title + "은 어떠셨나요 리뷰를 남겨주세요. (최소 20자 이상)"}'
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/start_point_layout" />
     </androidx.constraintlayout.widget.ConstraintLayout>
