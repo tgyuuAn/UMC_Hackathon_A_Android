@@ -7,6 +7,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pknu.busannollerwar.R
 import com.pknu.busannollerwar.databinding.FragmentThingsToDoBinding
+import com.pknu.busannollerwar.presentation.thingstodo.articleDetail.ArticleDetailFragmentDirections
 import com.pknu.busannollerwar.presentation.util.BaseFragment
 import com.pknu.busannollerwar.presentation.util.repeatOnStarted
 import dagger.hilt.android.AndroidEntryPoint
@@ -35,7 +36,10 @@ class ThingsToDoFragment :
 
     private fun handleEvent(event: ThingsToDoEvent) {
         when (event) {
-            is ThingsToDoEvent.NavigateToArticleDetail -> findNavController().navigate(R.id.articleDetailFragment)
+            is ThingsToDoEvent.NavigateToArticleDetail -> {
+                val action = ThingsToDoFragmentDirections.actionGlobalArticleDetailFragment(event.article)
+                findNavController().navigate(action)
+            }
         }
     }
 

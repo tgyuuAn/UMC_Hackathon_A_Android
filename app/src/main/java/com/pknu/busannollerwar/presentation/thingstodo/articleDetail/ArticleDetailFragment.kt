@@ -5,8 +5,8 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.pknu.busannollerwar.R
 import com.pknu.busannollerwar.databinding.FragmentArticleDetailBinding
+import com.pknu.busannollerwar.presentation.thingstodo.ThingsToDoFragmentDirections
 import com.pknu.busannollerwar.presentation.util.BaseFragment
 import com.pknu.busannollerwar.presentation.util.repeatOnStarted
 
@@ -34,7 +34,12 @@ class ArticleDetailFragment :
 
     private fun handleEvent(event: ArticleDetailEvent) {
         when (event) {
-            is ArticleDetailEvent.NavigateToReview -> findNavController().navigate(R.id.reviewFragment)
+            is ArticleDetailEvent.NavigateToReview -> {
+
+                val action =
+                    ThingsToDoFragmentDirections.actionGlobalArticleDetailFragment(event.article)
+                findNavController().navigate(action)
+            }
         }
     }
 }

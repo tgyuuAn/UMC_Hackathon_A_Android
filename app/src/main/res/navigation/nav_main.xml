@@ -62,4 +62,12 @@
         android:id="@+id/languageSettingFragment"
         android:name="com.pknu.busannollerwar.presentation.setting.languagesetting.LanguageSettingFragment"
         android:label="LanguageSettingFragment" />
+
+    <action
+        android:id="@+id/action_global_reviewFragment"
+        app:destination="@id/reviewFragment" />
+
+    <action
+        android:id="@+id/action_global_articleDetailFragment"
+        app:destination="@id/articleDetailFragment" />
 </navigation>
