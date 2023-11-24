@@ -5,7 +5,6 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pknu.busannollerwar.databinding.FragmentThingsToDoBinding
-import com.pknu.busannollerwar.presentation.home.HomeListDecoration
 import com.pknu.busannollerwar.presentation.util.BaseFragment
 import com.pknu.busannollerwar.presentation.util.repeatOnStarted
 import dagger.hilt.android.AndroidEntryPoint
@@ -18,6 +17,7 @@ class ThingsToDoFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setBinding()
     }
 
     private fun setBinding() = binding.apply {

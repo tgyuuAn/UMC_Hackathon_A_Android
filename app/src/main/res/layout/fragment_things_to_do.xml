@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.pknu.busannollerwar.presentation.thingstodo.ThingsToDoViewModel" />
@@ -12,6 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/main2"
         tools:context=".presentation.thingstodo.ThingsToDoFragment">
 
         <com.pknu.busannollerwar.presentation.view.Bar
