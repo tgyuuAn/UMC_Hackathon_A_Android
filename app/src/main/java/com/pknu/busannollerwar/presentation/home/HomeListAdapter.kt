@@ -55,15 +55,11 @@ class HomeListAdapter(private val viewModel: HomeViewModel) :
             oldItem == newItem
     }) {
 
-    override fun getItemViewType(position: Int): Int = when (getItem(position)) {
-        Contents.KPOP -> 0
-        Contents.HANBOK -> 1
-        Contents.COOKING -> 2
-    }
+    override fun getItemViewType(position: Int): Int = getItem(position).value
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder =
         when (viewType) {
-            0 -> {
+            Contents.KPOP.value -> {
                 val binding = ItemHomeFirstImageCardBinding.inflate(
                     LayoutInflater.from(parent.context),
                     parent,
@@ -72,7 +68,7 @@ class HomeListAdapter(private val viewModel: HomeViewModel) :
                 HomeViewHolder.FirstHomeViewHolder(viewModel, binding)
             }
 
-            1 -> {
+            Contents.COOKING.value -> {
                 val binding = ItemHomeSecondImageCardBinding.inflate(
                     LayoutInflater.from(parent.context),
                     parent,

@@ -49,7 +49,11 @@
     <fragment
         android:id="@+id/contentsFragment"
         android:name="com.pknu.busannollerwar.presentation.home.contents.ContentsFragment"
-        android:label="ContentsFragment" />
+        android:label="ContentsFragment">
+        <argument
+            android:name="content"
+            app:argType="integer" />
+    </fragment>
     <fragment
         android:id="@+id/reviewFragment"
         android:name="com.pknu.busannollerwar.presentation.thingstodo.articleDetail.review.ReviewFragment"
@@ -70,4 +74,8 @@
     <action
         android:id="@+id/action_global_articleDetailFragment"
         app:destination="@id/articleDetailFragment" />
+
+    <action
+        android:id="@+id/action_global_contentsFragment"
+        app:destination="@id/contentsFragment" />
 </navigation>
