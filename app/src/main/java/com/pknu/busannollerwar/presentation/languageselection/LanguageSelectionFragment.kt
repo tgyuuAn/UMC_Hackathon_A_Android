@@ -78,6 +78,4 @@ class LanguageSelectionFragment :
         editor?.putString("language", Lang)
         editor?.apply()
     }
-
-
 }

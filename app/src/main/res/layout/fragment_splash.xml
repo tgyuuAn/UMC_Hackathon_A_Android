@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -9,18 +10,24 @@
             type="com.pknu.busannollerwar.presentation.splash.SplashViewModel" />
     </data>
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black"
         tools:context=".presentation.splash.SplashFragment">
 
-        <TextView
+        <ProgressBar
+            android:id="@+id/progressBar_splash"
+            style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="splash"
-            android:textColor="@color/white" />
+            android:layout_height="10dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="50dp"
+            android:max="100"
+            android:progress="@{viewModel.progress}"
+            android:progressDrawable="@drawable/item_progressbar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
