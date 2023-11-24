@@ -10,6 +10,7 @@ import com.pknu.busannollerwar.presentation.home.HomeEvent
 import com.pknu.busannollerwar.presentation.home.HomeFragmentDirections
 import com.pknu.busannollerwar.presentation.util.BaseFragment
 import com.pknu.busannollerwar.presentation.util.repeatOnStarted
+import kotlinx.serialization.json.JsonNull.content
 
 class ContentsFragment : BaseFragment<FragmentContentsBinding, ContentsViewModel>(
     FragmentContentsBinding::inflate

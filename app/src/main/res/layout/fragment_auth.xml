@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewModel"
             type="com.pknu.busannollerwar.presentation.auth.AuthViewModel" />
@@ -160,7 +159,8 @@
                 android:id="@+id/google_iv"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/google" />
+                android:src="@drawable/google"
+                android:onClick="@{()->viewModel.googleLogin()}"/>
 
             <ImageView
                 android:id="@+id/instagram_iv"

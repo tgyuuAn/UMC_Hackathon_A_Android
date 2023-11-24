@@ -31,7 +31,7 @@ class AuthFragment : BaseFragment<FragmentAuthBinding, AuthViewModel>(FragmentAu
 
     private fun handleEvent(event: AuthEvent) {
         when (event) {
-            else -> {}
+            AuthEvent.GoogleLogin -> {}
         }
     }
 }

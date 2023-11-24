@@ -38,10 +38,6 @@ class ReviewFragment :BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setBinding()
-
-        binding.pictureIv.setOnClickListener {
-            openGallery()
-        }
     }
 
     private fun setBinding() = binding.apply {

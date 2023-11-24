@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="@string/review_write"
+            android:text="@string/write_review"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -189,7 +189,5 @@
             android:textColor="@color/white"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>
