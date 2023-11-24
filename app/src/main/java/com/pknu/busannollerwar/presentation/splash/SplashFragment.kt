@@ -1,13 +1,13 @@
 package com.pknu.busannollerwar.presentation.splash
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.pknu.busannollerwar.R
 import com.pknu.busannollerwar.databinding.FragmentSplashBinding
 import com.pknu.busannollerwar.presentation.util.BaseFragment
+import com.pknu.busannollerwar.presentation.util.repeatOnStarted
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -16,11 +16,22 @@ class SplashFragment :
 
     override val fragmentViewModel: SplashViewModel by viewModels()
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setBinding()
+    }
 
-        return inflater.inflate(R.layout.fragment_splash, container, false)
+    private fun setBinding() = binding.apply {
+        viewModel = fragmentViewModel.apply {
+            viewLifecycleOwner.apply {
+                repeatOnStarted { eventFlow.collect { handleEvent(it) } }
+            }
+        }
+    }
+
+    private fun handleEvent(event: SplashViewModel.SplashEvent) {
+        when (event) {
+            is SplashViewModel.SplashEvent.TimerDone -> findNavController().navigate(R.id.homeFragment)
+        }
     }
 }
