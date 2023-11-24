@@ -1,4 +1,4 @@
-package com.pknu.busannollerwar.presentation.util.bindingadapter
+package com.pknu.busannollerwar.presentation.bindingadapter
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
