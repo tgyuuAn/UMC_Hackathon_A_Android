@@ -1,5 +1,6 @@
 package com.pknu.busannollerwar.presentation.thingstodo.articleDetail.review
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -24,6 +25,11 @@ class ReviewViewModel @Inject constructor() : ViewModel() {
 
     private val _nowIndex = MutableStateFlow<Int>(0)
     val nowIndex = _nowIndex.asStateFlow()
+
+
+    fun submitReview() {
+        Log.d("test","submit!")
+    }
 
     fun setImageUri(uri: String) {
         _selectedImageUri.value = uri
