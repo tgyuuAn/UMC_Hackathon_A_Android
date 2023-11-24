@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="com.pknu.busannollerwar.presentation.languageselection.Language"/>
+
+        <import type="com.pknu.busannollerwar.presentation.languageselection.Language" />
+
         <variable
             name="viewModel"
             type="com.pknu.busannollerwar.presentation.languageselection.LanguageSelectionViewModel" />
@@ -54,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="@string/language_selection"
+            android:text="자주 사용하는 언어를 선택해주세요."
             android:textColor="@color/black"
             android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -66,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Which language do you use the most?"
+            android:text="Please select the language you use most often."
             android:textColor="@color/black"
             android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
