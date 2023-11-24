@@ -16,6 +16,7 @@ class LanguageSelectionViewModel @Inject constructor() : ViewModel() {
     val eventFlow get() = _eventFlow.asSharedFlow()
 
     fun navigateToHome() = event(LanguageSelectionEvent.NavigateToHome)
+
     private fun event(event: LanguageSelectionEvent) =
         viewModelScope.launch { _eventFlow.emit(event) }
 }
