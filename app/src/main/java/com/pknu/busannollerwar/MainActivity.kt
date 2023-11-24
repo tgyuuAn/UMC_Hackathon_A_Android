@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.fcv_main_fragmentContainverView) as NavHostFragment
         navController = navHostFragment.navController
         NavigationUI.setupWithNavController(binding.bnvMainBottomNaviView, navController)
-
+        binding.bnvMainBottomNaviView.itemIconTintList = null
         setBottomNavigationVisiblity()
     }
 
