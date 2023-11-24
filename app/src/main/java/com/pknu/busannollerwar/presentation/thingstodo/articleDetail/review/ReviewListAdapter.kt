@@ -1,5 +1,7 @@
 package com.pknu.busannollerwar.presentation.thingstodo.articleDetail.review
 
+import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,18 +14,22 @@ import com.pknu.busannollerwar.databinding.ItemArticleReviewImageBinding
 class ReviewViewHolder(
     private val fragmentViewModel: ReviewViewModel,
     private val binding: ItemArticleReviewImageBinding,
+    private val context : Context,
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(idx: Int, item: String) {
         binding.apply {
             viewModel = fragmentViewModel
             index = idx
-
+            Log.d("test", item.toString())
             if (item != "") {
+                Log.d("test", "성공")
                 ivItemImage.visibility = View.VISIBLE
-                Glide.with(clArticleImageItem.context).load(item)
+                tvPlus.visibility = View.GONE
+                Glide.with(context).load(item)
                     .into(ivItemImage)
             } else {
                 ivItemImage.visibility = View.GONE
+                tvPlus.visibility = View.VISIBLE
             }
         }
     }
@@ -31,15 +37,16 @@ class ReviewViewHolder(
 
 class ReviewListAdapter(
     private val viewModel: ReviewViewModel,
+    private val context : Context
 ) :
-    ListAdapter<String, ReviewViewHolder>(object :
-        DiffUtil.ItemCallback<String>() {
+    ListAdapter<Pair<Int,String>, ReviewViewHolder>(object :
+        DiffUtil.ItemCallback<Pair<Int,String>>() {
 
-        override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
-            return oldItem == newItem
+        override fun areItemsTheSame(oldItem: Pair<Int,String>, newItem: Pair<Int,String>): Boolean {
+            return oldItem === newItem
         }
 
-        override fun areContentsTheSame(oldItem: String, newItem: String): Boolean {
+        override fun areContentsTheSame(oldItem: Pair<Int,String>, newItem: Pair<Int,String>): Boolean {
             return oldItem == newItem
         }
     }) {
@@ -49,11 +56,13 @@ class ReviewListAdapter(
             parent,
             false
         )
-        return ReviewViewHolder(viewModel, binding)
+        Log.d("test","호출 성공")
+        return ReviewViewHolder(viewModel, binding, context)
     }
 
     override fun onBindViewHolder(holder: ReviewViewHolder, position: Int) {
-        holder.bind(position, getItem(position))
+        Log.d("test","bind 성공")
+        holder.bind(getItem(position).first, getItem(position).second)
     }
 }
 

@@ -6,6 +6,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
@@ -29,9 +30,9 @@ class ReviewFragment : BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
     private var nowIndex: Int = 0
 
     val reviewListAdapter: ReviewListAdapter by lazy {
-        ReviewListAdapter(fragmentViewModel)
+        ReviewListAdapter(fragmentViewModel, requireContext())
     }
-    val imageList = mutableListOf<String>("", "", "", "")
+    val imageList = mutableListOf<Pair<Int, String>>(0 to "", 1 to "", 2 to "", 3 to "")
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -82,11 +83,13 @@ class ReviewFragment : BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+        Log.d("test", data?.data.toString())
 
         if (requestCode == PICK_IMAGE && resultCode == Activity.RESULT_OK && data != null) {
+            Log.d("test", nowIndex.toString())
             selectedImageUri = data.data!!
+            imageList[nowIndex] = nowIndex to selectedImageUri.toString()
+            reviewListAdapter.submitList(imageList.toList())
         }
-        imageList[nowIndex] = selectedImageUri.toString()
-        reviewListAdapter.submitList(imageList)
     }
 }
