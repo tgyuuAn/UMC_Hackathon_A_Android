@@ -29,9 +29,9 @@ class SplashFragment :
         }
     }
 
-    private fun handleEvent(event: SplashViewModel.SplashEvent) {
+    private fun handleEvent(event: SplashEvent) {
         when (event) {
-            is SplashViewModel.SplashEvent.TimerDone -> findNavController().navigate(R.id.languageSelectionFragment)
+            is SplashEvent.SplashDone -> findNavController().navigate(R.id.languageSelectionFragment)
         }
     }
 }

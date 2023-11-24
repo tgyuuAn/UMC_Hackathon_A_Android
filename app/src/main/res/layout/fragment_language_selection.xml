@@ -52,7 +52,7 @@
             android:id="@+id/icon_character_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/icon_character"
+            android:src="@drawable/ic_boogie"
             android:layout_marginTop="50dp"
             app:layout_constraintTop_toBottomOf="@id/appName_iv"
             app:layout_constraintEnd_toEndOf="parent"
@@ -100,7 +100,7 @@
                 android:layout_width="170dp"
                 android:layout_height="41dp"
                 android:onClick="@{() -> viewModel.navigateToHome()}"
-                android:text="@string/language_korea"
+                android:text="한국어"
                 android:textSize="17sp"
                 android:textColor="@color/white"
                 android:background="@drawable/button_korean"/>
