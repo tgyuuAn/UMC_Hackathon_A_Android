@@ -8,7 +8,8 @@
             type="com.pknu.busannollerwar.presentation.setting.SettingViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -45,119 +46,29 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/announcement_layout"
+                <com.pknu.busannollerwar.presentation.view.SettingMenu
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="11dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintTop_toTopOf="parent">
+                    android:layout_marginTop="15dp"
+                    app:title="@string/notice" />
 
-                    <TextView
-                        android:id="@+id/announcement_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:text="@string/notice"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <ImageView
-                        android:id="@+id/right_arrow_iv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="20dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/ic_right_arrow"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <LinearLayout
-                    android:id="@+id/settings_language_layout"
+                <com.pknu.busannollerwar.presentation.view.SettingMenu
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="11dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintTop_toBottomOf="@id/announcement_layout">
+                    android:layout_marginTop="15dp"
+                    app:title="@string/setting_language" />
 
-                    <TextView
-                        android:id="@+id/settings_language_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:text="@string/setting_language"
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
-
-                    <ImageView
-                        android:id="@+id/language_right_arrow_iv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="260dp"
-                        android:layout_marginTop="8dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/ic_right_arrow" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/settings_logout"
+                <com.pknu.busannollerwar.presentation.view.SettingMenu
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="11dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintTop_toBottomOf="@id/announcement_layout">
+                    android:layout_marginTop="15dp"
+                    app:title="@string/logout" />
 
-                    <TextView
-                        android:id="@+id/settings_logout_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:text="@string/logout"
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
-
-                    <ImageView
-                        android:id="@+id/logout_right_arrow_iv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="260dp"
-                        android:layout_marginTop="8dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/ic_right_arrow" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/settings_withdrawal_layout"
+                <com.pknu.busannollerwar.presentation.view.SettingMenu
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="11dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintTop_toBottomOf="@id/announcement_layout">
-
-                    <TextView
-                        android:id="@+id/settings_withdrawal_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:text="@string/withdrawl"
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
-
-                    <ImageView
-                        android:id="@+id/withdrawal_right_arrow_iv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="260dp"
-                        android:layout_marginTop="8dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/ic_right_arrow" />
-                </LinearLayout>
+                    android:layout_marginTop="15dp"
+                    app:title="@string/withdrawl" />
             </LinearLayout>
         </FrameLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

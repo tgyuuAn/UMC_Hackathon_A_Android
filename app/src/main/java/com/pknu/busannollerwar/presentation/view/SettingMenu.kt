@@ -19,10 +19,10 @@ class SettingMenu @JvmOverloads constructor(
     init {
         val infService = Context.LAYOUT_INFLATER_SERVICE
         val li = context.getSystemService(infService) as LayoutInflater
-        val view = li.inflate(R.layout.view_bar, this, false)
+        val view = li.inflate(R.layout.view_setting_menu, this, false)
         addView(view)
 
-        title = findViewById<TextView>(R.id.barTitleTV)
+        title = findViewById<TextView>(R.id.MenuTitleTV)
 
         val typedArray = context.obtainStyledAttributes(attrs, R.styleable.SettingMenu)
         val titleText = typedArray.getString(R.styleable.SettingMenu_title) ?: ""
