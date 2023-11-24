@@ -23,8 +23,4 @@ class SplashViewModel @Inject constructor() : ViewModel() {
     }
 
     private fun event(event: SplashEvent) = viewModelScope.launch { _eventFlow.emit(event) }
-
-    sealed class SplashEvent {
-        data object TimerDone : SplashEvent()
-    }
 }

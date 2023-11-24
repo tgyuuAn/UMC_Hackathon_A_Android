@@ -4,16 +4,11 @@ import android.app.Activity
 import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.core.app.ActivityCompat.recreate
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.pknu.busannollerwar.R
 import com.pknu.busannollerwar.databinding.FragmentLanguageSelectionBinding
-import com.pknu.busannollerwar.databinding.FragmentSplashBinding
 import com.pknu.busannollerwar.presentation.util.BaseFragment
 import com.pknu.busannollerwar.presentation.util.repeatOnStarted
 import dagger.hilt.android.AndroidEntryPoint
@@ -62,7 +57,7 @@ class LanguageSelectionFragment :
     }
 
     private fun handleEvent(event: LanguageSelectionEvent) = when (event) {
-        is LanguageSelectionEvent.NavigateToHome -> {}
+        is LanguageSelectionEvent.NavigateToHome -> findNavController().navigate(R.id.homeFragment)
     }
 
     //Locale 객체를 생성특정 지리적, 정치적 또는 문화적 영역을 나타냅니다.
