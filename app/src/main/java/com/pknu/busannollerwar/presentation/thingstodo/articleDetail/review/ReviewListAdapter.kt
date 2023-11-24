@@ -6,14 +6,18 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.pknu.busannollerwar.databinding.ItemGalleryBinding
+import com.pknu.busannollerwar.presentation.thingstodo.articledetail.review.OnItemClickListener
+
 
 class ReviewViewHolder(val binding: ItemGalleryBinding) : RecyclerView.ViewHolder(binding.root) {
     fun bind() {
 
     }
+
+
 }
 
-class ReviewListAdapter : ListAdapter<Int, ReviewViewHolder>(object :
+class ReviewListAdapter() : ListAdapter<Int, ReviewViewHolder>(object :
     DiffUtil.ItemCallback<Int>() {
 
     override fun areItemsTheSame(oldItem: Int, newItem: Int): Boolean {

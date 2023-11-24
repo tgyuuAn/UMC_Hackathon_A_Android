@@ -46,6 +46,7 @@
                 android:layout_height="168dp"
                 android:layout_gravity="center"
                 android:src="@drawable/kakaotalk"
+                android:scaleType="fitXY"
                 app:layout_constraintTop_toBottomOf="@id/write_review_tv" />
 
             <TextView
@@ -55,6 +56,7 @@
                 android:layout_gravity="bottom|start"
                 android:layout_marginStart="41dp"
                 android:text="광안리해수욕장"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
