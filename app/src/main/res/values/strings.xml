@@ -21,7 +21,7 @@
     <string name="my_review">내 리뷰 모아보기</string>
 
     <string name="update">다른 언어(일본어, 중국어 등)는\\n 추후에 업데이트될 예정입니다.</string>
-    <string name="review_write">리뷰 쓰기</string>
+    <string name="wrtie_review">리뷰 쓰기</string>
     <string name="star_rating">별점 매기기</string>
 
     <string name="language_english">English</string>
@@ -29,7 +29,5 @@
     <string name="kpop_dance">K-POP 댄스 원데이 클래스</string>
     <string name="cooking">한식 원데이 쿠킹 클래스</string>
     <string name="hanbok">한복 체험</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="looking_all">전체순으로 보기</string>
 </resources>
