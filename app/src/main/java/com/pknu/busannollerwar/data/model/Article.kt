@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Article(
-    @SerialName("board_id") val boardID: Int = 0,
+    @SerialName("post_id") val postID: Int = 0,
     val title: String = "해운대",
     val content: String = "짱 좋아요",
     @SerialName("created_at") val createdAt: String = "",
