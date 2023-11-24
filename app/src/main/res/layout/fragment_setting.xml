@@ -40,25 +40,25 @@
                 <com.pknu.busannollerwar.presentation.view.SettingMenu
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="20dp"
                     app:title="@string/notice" />
 
                 <com.pknu.busannollerwar.presentation.view.SettingMenu
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="20dp"
                     app:title="@string/setting_language" />
 
                 <com.pknu.busannollerwar.presentation.view.SettingMenu
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="20dp"
                     app:title="@string/logout" />
 
                 <com.pknu.busannollerwar.presentation.view.SettingMenu
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="20dp"
                     app:title="@string/withdrawl" />
             </LinearLayout>
         </FrameLayout>

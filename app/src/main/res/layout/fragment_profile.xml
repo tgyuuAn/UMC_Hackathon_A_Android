@@ -18,6 +18,5 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="profile" />
-
     </FrameLayout>
 </layout>
