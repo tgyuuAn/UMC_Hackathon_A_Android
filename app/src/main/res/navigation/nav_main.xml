@@ -10,19 +10,16 @@
         android:name="com.pknu.busannollerwar.presentation.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
-
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.pknu.busannollerwar.presentation.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
-
     <fragment
         android:id="@+id/settingFragment"
-        android:name="com.pknu.busannollerwar.presentation.home.HomeFragment"
+        android:name="com.pknu.busannollerwar.presentation.setting.SettingFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_setting" />
-
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.pknu.busannollerwar.presentation.splash.SplashFragment"
