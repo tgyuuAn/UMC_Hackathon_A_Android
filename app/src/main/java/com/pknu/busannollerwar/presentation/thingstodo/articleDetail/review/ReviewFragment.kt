@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide
 import com.pknu.busannollerwar.databinding.FragmentReiviewBinding
 import com.pknu.busannollerwar.presentation.thingstodo.articleDetail.ArticleDetailFragmentArgs
 import com.pknu.busannollerwar.presentation.util.BaseFragment
+import com.pknu.busannollerwar.presentation.util.repeatOnStarted
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,7 +24,13 @@ class ReviewFragment : BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
     override val fragmentViewModel: ReviewViewModel by viewModels()
     val PICK_IMAGE = 1  // 아무 정수 값으로 설정
 
-    val reviewListAdapter: ReviewListAdapter by lazy { ReviewListAdapter() }
+    private var selectedImageUri: Uri? = null
+    private var nowIndex: Int = 0
+
+    val reviewListAdapter: ReviewListAdapter by lazy {
+        ReviewListAdapter(fragmentViewModel)
+    }
+    val imageList = mutableListOf<String>("", "", "", "")
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -34,19 +41,26 @@ class ReviewFragment : BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
         val args: ArticleDetailFragmentArgs by navArgs()
         val nowArticle = args.article
         article = nowArticle
+
+        viewModel = fragmentViewModel.apply {
+            repeatOnStarted { eventFlow.collect { handleEvent(it) } }
+        }
+        setRecyclerView()
+    }
+
+    private fun handleEvent(event: ReviewEvent) = when (event) {
+        is ReviewEvent.OpenGallery -> openGallery(event.idx)
     }
 
     private fun setRecyclerView() = binding.galleryRv.apply {
         adapter = reviewListAdapter
         layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-
-        setOnClickListener {
-            openGallery()
-        }
+        addItemDecoration(ReviewDecoration(requireContext()))
     }
 
-    private fun openGallery() {
+    private fun openGallery(idx: Int) {
+        nowIndex = idx
         val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         startActivityForResult(intent, PICK_IMAGE)
     }
@@ -55,11 +69,12 @@ class ReviewFragment : BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == PICK_IMAGE && resultCode == Activity.RESULT_OK && data != null) {
-            // 이미지를 선택한 경우 처리
-            val selectedImageUri: Uri = data.data!!
-            loadImageIntoImageView(binding.pictureIv, selectedImageUri)
-            // 여기에서 선택한 이미지를 사용하거나 처리할 수 있습니다.
+            selectedImageUri = data.data!!
+            loadImageIntoImageView(binding.pictureIv, selectedImageUri!!)
         }
+
+        imageList[nowIndex] = selectedImageUri.toString()
+        reviewListAdapter.submitList(imageList)
     }
 
     private fun loadImageIntoImageView(imageView: ImageView, imageUri: Uri) {

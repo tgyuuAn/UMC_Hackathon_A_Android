@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|start"
                 android:layout_marginStart="41dp"
-                android:text="광안리해수욕장"
+                android:text="@{article.title}"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -68,7 +68,7 @@
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@id/picture_layout"
-            tools:listitem="@layout/item_gallery" />
+            tools:listitem="@layout/item_article_review_image" />
 
         <LinearLayout
             android:id="@+id/start_point_layout"
