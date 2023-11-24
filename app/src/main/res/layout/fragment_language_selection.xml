@@ -55,7 +55,7 @@
             android:id="@+id/language_selection_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="80dp"
             android:text="자주 사용하는 언어를 선택해주세요."
             android:textColor="@color/black"
             android:textSize="17sp"
@@ -90,7 +90,7 @@
             <Button
                 android:id="@+id/language_korea_btn"
                 android:layout_width="170dp"
-                android:layout_height="41dp"
+                android:layout_height="40dp"
                 android:background="@drawable/button_korean"
                 android:onClick="@{() -> viewModel.setLanguage(Language.KOREAN)}"
                 android:text="@string/language_korean"
@@ -100,7 +100,7 @@
             <Button
                 android:id="@+id/language_english_btn"
                 android:layout_width="170dp"
-                android:layout_height="41dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/button_english"
                 android:onClick="@{() -> viewModel.setLanguage(Language.ENGLISH)}"
