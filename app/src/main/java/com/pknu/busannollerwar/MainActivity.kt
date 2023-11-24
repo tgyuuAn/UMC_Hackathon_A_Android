@@ -7,7 +7,9 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.pknu.busannollerwar.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
@@ -33,15 +35,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun setBottomNavigationVisiblity() {
         val hideBottomNavigationFragments = mutableListOf<Int>()
-
         val typedArray = resources.obtainTypedArray(R.array.hide_bottomNavigation_fragments)
-
         for (index in 0..typedArray.length()) {
             hideBottomNavigationFragments.add(typedArray.getResourceId(index, 0))
         }
 
         typedArray.recycle()
-
         navController.addOnDestinationChangedListener { _, destination, _ ->
 
             binding.bnvMainBottomNaviView.isVisible =
