@@ -7,9 +7,12 @@
     <string name="home">Home</string>
     <string name="profile">My Page</string>
     <string name="setting">Settings</string>
-    <string name="Language_Selection">Which language do you use the most?</string>
-    <string name="announcement">Announcement</string>
+
+    <string name="notice">Announcement</string>
     <string name="setting_language">Language</string>
     <string name="logout">Logout</string>
     <string name="withdrawl">Withdrawal</string>
+
+    <string name="language_selection">Which language do you use the most?</string>
+    <string name="home_title">Things to Do in Busan</string>
 </resources>

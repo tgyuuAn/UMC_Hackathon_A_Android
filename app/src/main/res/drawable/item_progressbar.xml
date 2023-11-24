@@ -18,7 +18,7 @@
         <clip>
             <shape>
                 <corners android:radius="9dp" />
-                <solid android:color="@color/progressBar_value" />
+                <solid android:color="@color/main2" />
             </shape>
         </clip>
     </item>
