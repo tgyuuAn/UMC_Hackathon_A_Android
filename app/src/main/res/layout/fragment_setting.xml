@@ -7,18 +7,24 @@
             type="com.pknu.busannollerwar.presentation.setting.SettingViewModel" />
     </data>
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black"
-        tools:context=".presentation.setting.SettingFragment">
+        tools:context=".presentation.setting.SettingFragment"
+        >
 
         <TextView
+            android:id="@+id/settings_tv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="setting"
-            android:textColor="@color/white" />
-    </FrameLayout>
+            android:text="설정"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

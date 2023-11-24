@@ -58,6 +58,7 @@ class LanguageSelectionFragment :
 
     private fun handleEvent(event: LanguageSelectionEvent) = when (event) {
         is LanguageSelectionEvent.NavigateToHome -> findNavController().navigate(R.id.homeFragment)
+
     }
 
     //Locale 객체를 생성특정 지리적, 정치적 또는 문화적 영역을 나타냅니다.
