@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="korean_btn">#00D1FF</color>
+    <color name="language_selection_background">#D6F3FF</color>
+
 </resources>
