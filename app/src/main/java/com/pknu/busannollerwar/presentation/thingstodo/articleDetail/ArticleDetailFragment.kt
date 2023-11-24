@@ -35,9 +35,8 @@ class ArticleDetailFragment :
     private fun handleEvent(event: ArticleDetailEvent) {
         when (event) {
             is ArticleDetailEvent.NavigateToReview -> {
-
                 val action =
-                    ThingsToDoFragmentDirections.actionGlobalArticleDetailFragment(event.article)
+                    ArticleDetailFragmentDirections.actionGlobalReviewFragment(event.article)
                 findNavController().navigate(action)
             }
         }
