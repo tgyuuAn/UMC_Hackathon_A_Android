@@ -10,13 +10,13 @@ import androidx.lifecycle.ViewModel
 
 typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
 
-abstract class BaseFragment<T : ViewDataBinding>(private val inflate: Inflate<T>) :
+abstract class BaseFragment<T : ViewDataBinding, V : ViewModel>(private val inflate: Inflate<T>) :
     Fragment() {
 
     private var _binding: T? = null
     val binding get() = _binding!!
 
-    protected abstract val fragmentViewModel: ViewModel
+    protected abstract val fragmentViewModel: V
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,
