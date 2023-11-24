@@ -30,7 +30,7 @@ class HomeFragment :
         }
 
         setRecyclerView()
-        homeListAdapter.submitList(listOf(1,2))
+        homeListAdapter.submitList(listOf(1, 2, 3))
     }
 
     private fun handleEvent(event: HomeEvent) {

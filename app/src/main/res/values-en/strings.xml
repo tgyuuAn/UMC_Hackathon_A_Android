@@ -2,7 +2,7 @@
 <resources>
     #english
     <string name="app_name">busanNollerwar</string>
-    <string name="language_korea">Korean</string>
+    <string name="language_korean">Korean</string>
     <string name="language_english">English</string>
     <string name="home">Home</string>
     <string name="profile">My Page</string>

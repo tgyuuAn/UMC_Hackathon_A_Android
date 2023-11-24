@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <import type="com.pknu.busannollerwar.presentation.languageselection.Language"/>
         <variable
             name="viewModel"
             type="com.pknu.busannollerwar.presentation.languageselection.LanguageSelectionViewModel" />
@@ -54,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="자주 사용하는 언어를 선택해주실래요?"
+            android:text="@string/language_selection"
             android:textColor="@color/black"
             android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -90,8 +90,8 @@
                 android:layout_width="170dp"
                 android:layout_height="41dp"
                 android:background="@drawable/button_korean"
-                android:onClick="@{() -> viewModel.navigateToHome()}"
-                android:text="한국어"
+                android:onClick="@{() -> viewModel.setLanguage(Language.KOREAN)}"
+                android:text="@string/language_korean"
                 android:textColor="@color/white"
                 android:textSize="17sp" />
 
@@ -101,12 +101,9 @@
                 android:layout_height="41dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/button_english"
-                android:onClick="@{() -> viewModel.navigateToHome()}"
-                android:text="English"
+                android:onClick="@{() -> viewModel.setLanguage(Language.ENGLISH)}"
+                android:text="@string/language_english"
                 android:textSize="17sp" />
-
-
         </LinearLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
