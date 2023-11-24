@@ -14,36 +14,51 @@ sealed class HomeViewHolder(private val binding: ViewDataBinding) :
     RecyclerView.ViewHolder(binding.root) {
     abstract fun bind()
 
-    class FirstHomeViewHolder(private val binding: ItemHomeFirstImageCardBinding) :
+    class FirstHomeViewHolder(
+        private val fragmentViewModel: HomeViewModel,
+        private val binding: ItemHomeFirstImageCardBinding
+    ) :
         HomeViewHolder(binding) {
         override fun bind() {
-
+            binding.viewModel = fragmentViewModel
         }
     }
 
-    class SecondHomeViewHolder(private val binding: ItemHomeSecondImageCardBinding) :
+    class SecondHomeViewHolder(
+        private val fragmentViewModel: HomeViewModel,
+        private val binding: ItemHomeSecondImageCardBinding
+    ) :
         HomeViewHolder(binding) {
         override fun bind() {
-
+            binding.viewModel = fragmentViewModel
         }
     }
 
-    class ThirdHomeViewHolder(private val binding: ItemHomeThirdImageCardBinding) :
+    class ThirdHomeViewHolder(
+        private val fragmentViewModel: HomeViewModel,
+        private val binding: ItemHomeThirdImageCardBinding
+    ) :
         HomeViewHolder(binding) {
         override fun bind() {
-
+            binding.viewModel = fragmentViewModel
         }
     }
 }
 
-class HomeListAdapter : ListAdapter<Int, HomeViewHolder>(object :
-    DiffUtil.ItemCallback<Int>() {
-    override fun areItemsTheSame(oldItem: Int, newItem: Int): Boolean = oldItem == newItem
-    override fun areContentsTheSame(oldItem: Int, newItem: Int): Boolean = oldItem == newItem
-}) {
+class HomeListAdapter(private val viewModel: HomeViewModel) :
+    ListAdapter<Contents, HomeViewHolder>(object :
+        DiffUtil.ItemCallback<Contents>() {
+        override fun areItemsTheSame(oldItem: Contents, newItem: Contents): Boolean =
+            oldItem == newItem
 
-    override fun getItemViewType(position: Int): Int {
-        return position
+        override fun areContentsTheSame(oldItem: Contents, newItem: Contents): Boolean =
+            oldItem == newItem
+    }) {
+
+    override fun getItemViewType(position: Int): Int = when (getItem(position)) {
+        Contents.KPOP -> 0
+        Contents.HANBOK -> 1
+        Contents.COOKING -> 2
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder =
@@ -54,7 +69,7 @@ class HomeListAdapter : ListAdapter<Int, HomeViewHolder>(object :
                     parent,
                     false
                 )
-                HomeViewHolder.FirstHomeViewHolder(binding)
+                HomeViewHolder.FirstHomeViewHolder(viewModel, binding)
             }
 
             1 -> {
@@ -63,7 +78,7 @@ class HomeListAdapter : ListAdapter<Int, HomeViewHolder>(object :
                     parent,
                     false
                 )
-                HomeViewHolder.SecondHomeViewHolder(binding)
+                HomeViewHolder.SecondHomeViewHolder(viewModel, binding)
             }
 
             else -> {
@@ -72,7 +87,7 @@ class HomeListAdapter : ListAdapter<Int, HomeViewHolder>(object :
                     parent,
                     false
                 )
-                HomeViewHolder.ThirdHomeViewHolder(binding)
+                HomeViewHolder.ThirdHomeViewHolder(viewModel, binding)
             }
         }
 
