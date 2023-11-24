@@ -29,4 +29,7 @@
     <string name="kpop_dance">K-POP 댄스 원데이 클래스</string>
     <string name="cooking">한식 원데이 쿠킹 클래스</string>
     <string name="hanbok">한복 체험</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="looking_all">전체순으로 보기</string>
 </resources>

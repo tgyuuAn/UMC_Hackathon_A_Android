@@ -49,12 +49,19 @@
                 android:scaleType="fitXY"
                 app:layout_constraintTop_toBottomOf="@id/write_review_tv" />
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="60dp"
+                android:src="@drawable/ic_image_title_background" />
+
             <TextView
                 android:id="@+id/place_name_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|start"
-                android:layout_marginStart="41dp"
+                android:layout_marginStart="60dp"
                 android:text="광안리해수욕장"
                 android:textStyle="bold"
                 android:textColor="@color/black"
