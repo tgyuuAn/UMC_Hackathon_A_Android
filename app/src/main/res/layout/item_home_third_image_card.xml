@@ -20,7 +20,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="fitXY"
-                android:src="@drawable/img_cooking" />
+                android:src="@drawable/img_hanbok" />
+
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -34,14 +35,14 @@
                 android:layout_gravity="bottom"
                 android:layout_marginStart="32dp"
                 android:gravity="center_vertical"
-                android:text="한식 쿠킹 클래스"
+                android:text="한복 체험"
                 android:textSize="20sp" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
-                android:src="@drawable/ic_second_badge" />
+                android:src="@drawable/ic_second_badge"/>
         </androidx.cardview.widget.CardView>
     </FrameLayout>
 </layout>

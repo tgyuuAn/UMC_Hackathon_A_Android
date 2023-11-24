@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.pknu.busannollerwar.databinding.ItemHomeFirstImageCardBinding
 import com.pknu.busannollerwar.databinding.ItemHomeSecondImageCardBinding
+import com.pknu.busannollerwar.databinding.ItemHomeThirdImageCardBinding
 
 sealed class HomeViewHolder(private val binding: ViewDataBinding) :
     RecyclerView.ViewHolder(binding.root) {
@@ -26,6 +27,13 @@ sealed class HomeViewHolder(private val binding: ViewDataBinding) :
 
         }
     }
+
+    class ThirdHomeViewHolder(private val binding: ItemHomeThirdImageCardBinding) :
+        HomeViewHolder(binding) {
+        override fun bind() {
+
+        }
+    }
 }
 
 class HomeListAdapter : ListAdapter<Int, HomeViewHolder>(object :
@@ -33,14 +41,40 @@ class HomeListAdapter : ListAdapter<Int, HomeViewHolder>(object :
     override fun areItemsTheSame(oldItem: Int, newItem: Int): Boolean = oldItem == newItem
     override fun areContentsTheSame(oldItem: Int, newItem: Int): Boolean = oldItem == newItem
 }) {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
-        val binding = ItemHomeFirstImageCardBinding.inflate(
-            LayoutInflater.from(parent.context),
-            parent,
-            false
-        )
-        return HomeViewHolder.FirstHomeViewHolder(binding)
+
+    override fun getItemViewType(position: Int): Int {
+        return position
     }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder =
+        when (viewType) {
+            0 -> {
+                val binding = ItemHomeFirstImageCardBinding.inflate(
+                    LayoutInflater.from(parent.context),
+                    parent,
+                    false
+                )
+                HomeViewHolder.FirstHomeViewHolder(binding)
+            }
+
+            1 -> {
+                val binding = ItemHomeSecondImageCardBinding.inflate(
+                    LayoutInflater.from(parent.context),
+                    parent,
+                    false
+                )
+                HomeViewHolder.SecondHomeViewHolder(binding)
+            }
+
+            else -> {
+                val binding = ItemHomeThirdImageCardBinding.inflate(
+                    LayoutInflater.from(parent.context),
+                    parent,
+                    false
+                )
+                HomeViewHolder.ThirdHomeViewHolder(binding)
+            }
+        }
 
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
         holder.bind()
