@@ -1,16 +1,17 @@
 package com.pknu.busannollerwar.presentation.thingstodo.articleDetail.review
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
-import android.widget.ImageView
+import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
 import com.pknu.busannollerwar.databinding.FragmentReiviewBinding
 import com.pknu.busannollerwar.presentation.thingstodo.articleDetail.ArticleDetailFragmentArgs
 import com.pknu.busannollerwar.presentation.util.BaseFragment
@@ -47,6 +48,19 @@ class ReviewFragment : BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
         }
         setRecyclerView()
         reviewListAdapter.submitList(imageList)
+
+        edtReview.setOnEditorActionListener { textView, action, event ->
+            var handled = false
+
+            if (action == EditorInfo.IME_ACTION_DONE) {
+                val inputMethodManager =
+                    requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                inputMethodManager.hideSoftInputFromWindow(edtReview.windowToken, 0)
+                handled = true
+            }
+
+            handled
+        }
     }
 
     private fun handleEvent(event: ReviewEvent) = when (event) {

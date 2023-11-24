@@ -42,7 +42,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="170dp"
+                android:layout_height="200dp"
                 android:layout_marginHorizontal="30dp"
                 android:layout_marginTop="20dp"
                 app:cardCornerRadius="10dp">
@@ -150,13 +150,15 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/review_et"
+            android:id="@+id/edt_review"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="15dp"
             android:background="@color/white"
+            android:gravity="top"
             android:hint='@{article.title + "은(는) 어떠셨나요 리뷰를 남겨주세요. (최소 20자 이상)"}'
+            android:imeOptions="actionDone"
             android:textAlignment="viewStart"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
