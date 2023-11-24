@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.pknu.busannollerwar.databinding.FragmentContentsBinding
 import com.pknu.busannollerwar.presentation.home.HomeEvent
 import com.pknu.busannollerwar.presentation.home.HomeFragmentDirections
@@ -21,23 +22,20 @@ class ContentsFragment : BaseFragment<FragmentContentsBinding, ContentsViewModel
     }
 
     private fun setBinding() = binding.apply {
+        val args : ContentsFragmentArgs by navArgs()
+        val content = args.content
+        
         viewModel = fragmentViewModel.apply {
             viewLifecycleOwner.apply {
                 repeatOnStarted { eventFlow.collect { handleEvent(it) } }
             }
         }
 
-        setRecyclerView()
-        homeListAdapter.submitList(listOf(Contents.KPOP, Contents.COOKING, Contents.HANBOK))
     }
 
-    private fun handleEvent(event: HomeEvent) {
+    private fun handleEvent(event: ContentsEvent) {
         when (event) {
-            is HomeEvent.NavigateToContents -> {
-                val action =
-                    HomeFragmentDirections.actionGlobalContentsFragment(event.contents.value)
-                findNavController().navigate(action)
-            }
+            else -> {}
         }
     }
 }
