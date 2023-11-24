@@ -4,6 +4,10 @@ import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFact
 import com.pknu.busannollerwar.data.NetworkApi
 import com.pknu.busannollerwar.data.datasource.article.ArticleDataSource
 import com.pknu.busannollerwar.data.datasource.article.ArticleDataSourceImpl
+import com.pknu.busannollerwar.data.datasource.comment.CommentDataSource
+import com.pknu.busannollerwar.data.datasource.comment.CommentDataSourceImpl
+import com.pknu.busannollerwar.data.datasource.user.UserDataSource
+import com.pknu.busannollerwar.data.datasource.user.UserDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -32,5 +36,13 @@ object DIModule {
     fun providesArticleDataSource(networkApi: NetworkApi): ArticleDataSource =
         ArticleDataSourceImpl(networkApi)
 
+    @Provides
+    @Singleton
+    fun providesUserDataSource(networkApi: NetworkApi): UserDataSource =
+        UserDataSourceImpl(networkApi)
 
+    @Provides
+    @Singleton
+    fun providesCommentDataSource(networkApi: NetworkApi): CommentDataSource =
+        CommentDataSourceImpl(networkApi)
 }
