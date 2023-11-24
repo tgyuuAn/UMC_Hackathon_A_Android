@@ -28,4 +28,9 @@
         android:name="com.pknu.busannollerwar.presentation.splash.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" />
+    <fragment
+        android:id="@+id/languageSelectionFragment"
+        android:name="com.pknu.busannollerwar.presentation.languageselection.LanguageSelectionFragment"
+        android:label="fragment_language_selection"
+        tools:layout="@layout/fragment_language_selection" />
 </navigation>

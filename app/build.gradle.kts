@@ -48,6 +48,7 @@ dependencies {
 
     //힐트
     implementation("com.google.dagger:hilt-android:2.48")
+    implementation("androidx.navigation:navigation-fragment:2.7.5")
     ksp("com.google.dagger:hilt-android-compiler:2.48")
 
     //레트로핏

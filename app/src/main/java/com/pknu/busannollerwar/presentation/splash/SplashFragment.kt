@@ -31,7 +31,7 @@ class SplashFragment :
 
     private fun handleEvent(event: SplashViewModel.SplashEvent) {
         when (event) {
-            is SplashViewModel.SplashEvent.TimerDone -> findNavController().navigate(R.id.homeFragment)
+            is SplashViewModel.SplashEvent.TimerDone -> findNavController().navigate(R.id.languageSelectionFragment)
         }
     }
 }

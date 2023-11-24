@@ -2,5 +2,6 @@
 <resources>
     <array name="hide_bottomNavigation_fragments">
         <item>@id/splashFragment</item>
+        <item>@id/languageSelectionFragment</item>
     </array>
 </resources>
