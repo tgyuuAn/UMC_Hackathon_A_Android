@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.pknu.busannollerwar.presentation.home.contents.ContentsViewModel" />
@@ -85,7 +86,7 @@
                     android:layout_marginHorizontal="15dp"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="25dp"
-                    android:text="K-pop 댄스 클래스 한국의 대표적인 음악 장르인 K-pop의 댄스를 직접 배우고 체험할 수 있는 특별한 활동입니다. K-pop 댄스 강사들이 직접 가르치며, K-pop의 대표적인 노래와 댄스 무대를 배우고 연습할 수 있는 시간을 제공합니다. 외국인들은 K-pop 아이돌의 댄스를 배우고 그들과 같은 퍼포먼스를 할 수 있는 기회를 얻게 됩니다."
+                    android:text="@string/kpop_description"
                     android:textSize="16sp" />
 
                 <TextView
@@ -94,7 +95,7 @@
                     android:layout_marginTop="25dp"
                     android:background="@drawable/rectangle_10"
                     android:gravity="center"
-                    android:text="@string/wrtie_review"
+                    android:text="@string/write_review"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -103,7 +104,8 @@
                 android:id="@+id/rv_contents"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp" />
+                android:layout_marginStart="30dp"
+                android:orientation="vertical" />
         </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

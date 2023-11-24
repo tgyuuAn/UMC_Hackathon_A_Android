@@ -21,7 +21,7 @@
     <string name="my_review">내 리뷰 모아보기</string>
 
     <string name="update">다른 언어(일본어, 중국어 등)는\\n 추후에 업데이트될 예정입니다.</string>
-    <string name="wrtie_review">리뷰 쓰기</string>
+    <string name="write_review">리뷰 쓰기</string>
     <string name="star_rating">별점 매기기</string>
 
     <string name="language_english">English</string>
@@ -30,4 +30,6 @@
     <string name="cooking">한식 원데이 쿠킹 클래스</string>
     <string name="hanbok">한복 체험</string>
     <string name="looking_all">전체순으로 보기</string>
+
+    <string name="kpop_description">K-pop 댄스 클래스 한국의 대표적인 음악 장르인 K-pop의 댄스를 직접 배우고 체험할 수 있는 특별한 활동입니다. K-pop 댄스 강사들이 직접 가르치며, K-pop의 대표적인 노래와 댄스 무대를 배우고 연습할 수 있는 시간을 제공합니다. 외국인들은 K-pop 아이돌의 댄스를 배우고 그들과 같은 퍼포먼스를 할 수 있는 기회를 얻게 됩니다.</string>
 </resources>
