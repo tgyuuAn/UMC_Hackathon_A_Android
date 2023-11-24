@@ -18,6 +18,12 @@
         tools:layout="@layout/fragment_profile" />
 
     <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.pknu.busannollerwar.presentation.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_setting" />
+
+    <fragment
         android:id="@+id/splashFragment"
         android:name="com.pknu.busannollerwar.presentation.SplashFragment"
         android:label="fragment_splash"
