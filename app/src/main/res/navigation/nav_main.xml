@@ -6,12 +6,6 @@
     app:startDestination="@id/splashFragment">
 
     <fragment
-        android:id="@+id/articleFragment"
-        android:name="com.pknu.busannollerwar.presentation.ArticleFragment"
-        android:label="fragment_article"
-        tools:layout="@layout/fragment_article" />
-
-    <fragment
         android:id="@+id/homeFragment"
         android:name="com.pknu.busannollerwar.presentation.HomeFragment"
         android:label="fragment_home"
