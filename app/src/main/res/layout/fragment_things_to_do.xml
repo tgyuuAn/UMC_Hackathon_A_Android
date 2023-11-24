@@ -11,6 +11,6 @@
         android:layout_height="match_parent"
         tools:context=".presentation.thingstodo.ThingsToDoFragment">
 
-        
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

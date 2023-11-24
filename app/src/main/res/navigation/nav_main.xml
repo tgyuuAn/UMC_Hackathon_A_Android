@@ -30,4 +30,8 @@
         android:name="com.pknu.busannollerwar.presentation.languageselection.LanguageSelectionFragment"
         android:label="fragment_language_selection"
         tools:layout="@layout/fragment_language_selection" />
+    <fragment
+        android:id="@+id/thingsToDoFragment"
+        android:name="com.pknu.busannollerwar.presentation.thingstodo.ThingsToDoFragment"
+        android:label="ThingsToDoFragment" />
 </navigation>

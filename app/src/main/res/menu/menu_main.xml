@@ -14,4 +14,9 @@
         android:id="@+id/settingFragment"
         android:icon="@drawable/menu_selector_setting"
         android:title="@string/setting"/>
+
+    <item
+        android:id="@+id/thingsToDoFragment"
+        android:icon="@drawable/menu_selector_pin"
+        android:title="@string/things_to_do"/>
 </menu>
