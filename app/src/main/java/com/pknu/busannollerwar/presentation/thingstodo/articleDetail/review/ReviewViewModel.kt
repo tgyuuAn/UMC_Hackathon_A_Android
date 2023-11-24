@@ -26,9 +26,9 @@ class ReviewViewModel @Inject constructor() : ViewModel() {
     private val _nowIndex = MutableStateFlow<Int>(0)
     val nowIndex = _nowIndex.asStateFlow()
 
-
     fun submitReview() {
-        Log.d("test","submit!")
+        Log.d("test","SubmitReview!")
+        event(ReviewEvent.SubmitReview)
     }
 
     fun setImageUri(uri: String) {

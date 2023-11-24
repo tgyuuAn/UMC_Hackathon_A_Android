@@ -3,16 +3,18 @@ package com.pknu.busannollerwar.presentation.thingstodo.articleDetail.review
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import com.pknu.busannollerwar.R
 import com.pknu.busannollerwar.databinding.FragmentReiviewBinding
 import com.pknu.busannollerwar.presentation.thingstodo.articleDetail.ArticleDetailFragmentArgs
@@ -65,15 +67,19 @@ class ReviewFragment : BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
         }
     }
 
-    private fun handleImageUri(uri : String){
-        Log.d("test","이미지 URI :" + uri)
-        Log.d("test",imageList.toString())
+    private fun handleImageUri(uri: String) {
+        Log.d("test", "이미지 URI :" + uri)
+        Log.d("test", imageList.toString())
         imageList[fragmentViewModel.nowIndex.value] = fragmentViewModel.nowIndex.value to uri
         reviewListAdapter.submitList(imageList.toList())
     }
 
     private fun handleEvent(event: ReviewEvent) = when (event) {
         is ReviewEvent.OpenGallery -> openGallery()
+        is ReviewEvent.SubmitReview -> {
+            Toast.makeText(requireContext(), "리뷰 작성을 완료하였습니다!", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.thingsToDoFragment)
+        }
     }
 
     private fun handleRate(score: Int) {
@@ -142,7 +148,7 @@ class ReviewFragment : BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        Log.d("test", "결과"+data?.data.toString())
+        Log.d("test", "결과" + data?.data.toString())
 
         if (requestCode == PICK_IMAGE && resultCode == Activity.RESULT_OK && data != null) {
             Log.d("test", fragmentViewModel.nowIndex.toString())
