@@ -2,7 +2,6 @@
     <string name="app_name">부산 놀러와</string>
 
     <string name="language_korean">한국어</string>
-    <string name="language_english">English</string>
     <string name="language_selection">자주 사용하는 언어를 선택해주실래요?</string>
 
     <string name="home">홈</string>
@@ -16,4 +15,5 @@
     <string name="withdrawl">회원탈퇴</string>
 
     <string name="home_title">이달의 콘텐츠</string>
+    <string name="language_english">English</string>
 </resources>
