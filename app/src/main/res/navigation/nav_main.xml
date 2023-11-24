@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.pknu.busannollerwar.presentation.HomeFragment"
+        android:name="com.pknu.busannollerwar.presentation.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.pknu.busannollerwar.presentation.ProfileFragment"
+        android:name="com.pknu.busannollerwar.presentation.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/settingFragment"
-        android:name="com.pknu.busannollerwar.presentation.HomeFragment"
+        android:name="com.pknu.busannollerwar.presentation.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_setting" />
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.pknu.busannollerwar.presentation.SplashFragment"
+        android:name="com.pknu.busannollerwar.presentation.splash.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" />
 </navigation>

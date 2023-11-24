@@ -1,4 +1,4 @@
-package com.pknu.busannollerwar.presentation
+package com.pknu.busannollerwar.presentation.setting
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
