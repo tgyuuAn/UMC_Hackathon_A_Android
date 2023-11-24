@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    #english
+    <string name="app_name">busanNollerwar</string>
+    <string name="language_korea">Korean</string>
+    <string name="language_english">English</string>
+</resources>

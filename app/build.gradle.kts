@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.pknu.busannollerwar"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.pknu.busannollerwar"

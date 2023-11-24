@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">busanNollerwar</string>
+    <string name="app_name">부산 놀러와</string>
+    <string name="language_korea">한글</string>
+    <string name="language_english">영어</string>
 </resources>
