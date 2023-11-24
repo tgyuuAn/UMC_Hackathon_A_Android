@@ -2,7 +2,7 @@
 <resources>
     #english
     <string name="app_name">busanNollerwar</string>
-    <string name="language_korea">Korean</string>
+    <string name="language_korean">한국어</string>
     <string name="language_english">English</string>
     <string name="home">Home</string>
     <string name="profile">My Page</string>
@@ -24,4 +24,7 @@
     <string name="review_write">Write Review</string>
     <string name="star_rating">Star Rating</string>
 
+    <string name="kpop_dance">K-POP Dance One day Class</string>
+    <string name="cooking">Korean Food One day Cooking Class</string>
+    <string name="hanbok">HanBok Experience</string>
 </resources>

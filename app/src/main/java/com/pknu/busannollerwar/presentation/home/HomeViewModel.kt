@@ -13,5 +13,9 @@ class HomeViewModel @Inject constructor() : ViewModel() {
     private val _eventFlow = MutableSharedFlow<HomeEvent>()
     val eventFlow get() = _eventFlow.asSharedFlow()
 
+    fun navigateToContents(contents: Contents) = viewModelScope.launch {
+        event(HomeEvent.NavigateToContents(contents))
+    }
+
     private fun event(event: HomeEvent) = viewModelScope.launch { _eventFlow.emit(event) }
 }

@@ -34,7 +34,10 @@ class SettingFragment :
 
     private fun handleEvent(event: SettingEvent) {
         when (event) {
-            else -> {}
+            is SettingEvent.NavigateToNotice -> {}
+            is SettingEvent.NavigateToLanguageSetting -> {}
+            is SettingEvent.Logout -> {}
+            is SettingEvent.Withdrawal -> {}
         }
     }
 }

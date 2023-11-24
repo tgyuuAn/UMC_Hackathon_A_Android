@@ -78,7 +78,6 @@
                 android:textColor="@color/black"
                 android:text="sresersr님"
                 />
-
         </LinearLayout>
 
         <LinearLayout
@@ -131,11 +130,6 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="27dp"
                 android:background="@drawable/my_page_button"/>
-
-
-
         </LinearLayout>
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

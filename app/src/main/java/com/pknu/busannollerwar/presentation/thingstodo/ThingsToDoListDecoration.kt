@@ -1,4 +1,4 @@
-package com.pknu.busannollerwar.presentation.home
+package com.pknu.busannollerwar.presentation.thingstodo
 
 import android.content.Context
 import android.graphics.Rect
@@ -6,7 +6,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.pknu.busannollerwar.presentation.util.dpToPx
 
-class HomeListDecoration(private val context: Context) : RecyclerView.ItemDecoration() {
+class ThingsToDoListDecoration(private val context: Context) : RecyclerView.ItemDecoration() {
     override fun getItemOffsets(
         outRect: Rect,
         view: View,
@@ -19,7 +19,7 @@ class HomeListDecoration(private val context: Context) : RecyclerView.ItemDecora
 
         if (index != 0) {
             //좌,상,우,하
-            outRect.set(0, 25.dpToPx(), 0, 0)
+            outRect.set(0, 20.dpToPx(), 0, 0)
         }
     }
 }

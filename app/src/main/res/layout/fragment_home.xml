@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/main"
+        android:background="@color/main2"
         tools:context=".presentation.home.HomeFragment">
 
         <com.pknu.busannollerwar.presentation.view.Bar
@@ -24,19 +24,22 @@
             app:layout_constraintTop_toTopOf="parent"
             app:title="@string/home_title" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_home"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
-            android:scrollbarAlwaysDrawVerticalTrack="true"
-            android:scrollbarSize="10dp"
-            android:scrollbarThumbVertical="@color/white"
-            android:scrollbars="vertical"
-            android:verticalScrollbarPosition="left"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rectangle_top_right_40"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/homeBar" />
+            app:layout_constraintTop_toBottomOf="@id/homeBar">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_home"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:scrollbars="none" />
+        </FrameLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

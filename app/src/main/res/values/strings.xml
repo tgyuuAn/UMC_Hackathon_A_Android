@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">부산 놀러와</string>
 
-    <string name="language_korea">한국어</string>
-    <string name="language_english">영어</string>
+    <string name="language_korean">한국어</string>
     <string name="language_selection">자주 사용하는 언어를 선택해주실래요?</string>
 
     <string name="home">홈</string>
@@ -25,4 +24,10 @@
    <string name="review_write">리뷰 쓰기</string>
     <string name="star_rating">별점 매기기</string>
 
+    <string name="language_english">English</string>
+
+    <string name="kpop_dance">K-POP 댄스 원데이 클래스</string>
+    <string name="cooking">한식 원데이 쿠킹 클래스</string>
+    <string name="hanbok">한복 체험</string>
+>>>>>>> e06e76914793525b45dab91ac2ee69c0e9e3f615
 </resources>

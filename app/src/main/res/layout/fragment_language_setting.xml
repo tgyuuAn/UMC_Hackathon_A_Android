@@ -42,7 +42,7 @@
                     android:id="@+id/korean_radio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/language_korea"
+                    android:text="@string/language_korean"
                     android:textSize="14sp"/>
 
                 <RadioButton

@@ -34,4 +34,8 @@
         android:id="@+id/thingsToDoFragment"
         android:name="com.pknu.busannollerwar.presentation.thingstodo.ThingsToDoFragment"
         android:label="ThingsToDoFragment" />
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.pknu.busannollerwar.presentation.auth.AuthFragment"
+        android:label="AuthFragment" />
 </navigation>

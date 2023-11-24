@@ -2,8 +2,9 @@ package com.pknu.busannollerwar.presentation.setting.languagesetting
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
 @HiltViewModel
-class LanguageSettingViewModel : ViewModel() {
+class LanguageSettingViewModel @Inject constructor() : ViewModel() {
 
 }

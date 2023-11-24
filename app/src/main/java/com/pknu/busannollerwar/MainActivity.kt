@@ -1,5 +1,6 @@
 package com.pknu.busannollerwar
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
