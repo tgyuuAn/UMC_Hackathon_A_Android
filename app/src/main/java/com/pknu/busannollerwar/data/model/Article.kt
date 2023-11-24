@@ -11,4 +11,4 @@ data class Article(
     @SerialName("created_at") val createdAt: String,
     @SerialName("modified_at") val modifiedAt: String,
     val hits: Int,
-)
+) : java.io.Serializable

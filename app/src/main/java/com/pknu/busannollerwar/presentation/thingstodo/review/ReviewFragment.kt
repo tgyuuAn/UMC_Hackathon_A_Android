@@ -15,7 +15,7 @@ import com.pknu.busannollerwar.presentation.util.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ReiviewFragment : BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
+class ReviewFragment : BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
     FragmentReiviewBinding::inflate) {
     override val fragmentViewModel: ReviewViewModel by viewModels()
     val PICK_IMAGE = 1  // 아무 정수 값으로 설정
