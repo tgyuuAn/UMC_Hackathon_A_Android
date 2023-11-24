@@ -9,8 +9,9 @@
     <string name="profile">마이 페이지</string>
     <string name="setting">설정</string>
     <string name="announcement">공지사항</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="setting_language">언어설정</string>
+    <string name="logout">로그아웃</string>
+    <string name="withdrawl">회원탈퇴</string>
 
 
 </resources>

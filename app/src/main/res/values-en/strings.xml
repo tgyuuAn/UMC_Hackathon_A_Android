@@ -9,4 +9,7 @@
     <string name="setting">Settings</string>
     <string name="Language_Selection">Which language do you use the most?</string>
     <string name="announcement">Announcement</string>
+    <string name="setting_language">Language</string>
+    <string name="logout">Logout</string>
+    <string name="withdrawl">Withdrawal</string>
 </resources>

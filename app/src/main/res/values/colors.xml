@@ -9,4 +9,6 @@
     <color name="main">#D6F3FF</color>
     <color name="progressBar_value">#00D1FF</color>
     <color name="progressBar_default">@color/white</color>
+
+    <color name="blue_text">#00D1FF</color>
 </resources>
