@@ -35,7 +35,7 @@ class HomeFragment :
 
     private fun handleEvent(event: HomeEvent) {
         when (event) {
-            else -> {}
+            is HomeEvent.NavigateToContents -> {}
         }
     }
 
