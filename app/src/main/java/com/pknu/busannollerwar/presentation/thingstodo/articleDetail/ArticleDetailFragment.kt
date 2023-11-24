@@ -29,9 +29,9 @@ class ArticleDetailFragment : BaseFragment<FragmentArticleDetailBinding, Article
         }
     }
 
-    private fun handleEvent(event: ThingsToDoEvent) {
+    private fun handleEvent(event: ArticleDetailEvent) {
         when (event) {
-            is ThingsToDoEvent.NavigateToArticleDetail -> {}
+            is ArticleDetailEvent.NavigateToReview -> {}
         }
     }
 }

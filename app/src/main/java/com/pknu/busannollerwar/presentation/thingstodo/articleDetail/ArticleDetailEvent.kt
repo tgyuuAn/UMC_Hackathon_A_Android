@@ -1,5 +1,7 @@
 package com.pknu.busannollerwar.presentation.thingstodo.articleDetail
 
-sealed class ArticleDetailEvent{
-    
+import com.pknu.busannollerwar.data.model.Article
+
+sealed class ArticleDetailEvent {
+    data class NavigateToReview(val article: Article) : ArticleDetailEvent()
 }
