@@ -5,7 +5,6 @@ import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 
 object BindingAdapter {
-
     @JvmStatic
     @BindingAdapter("setGlide")
     fun setGlide(imageView: ImageView, img: String) {
