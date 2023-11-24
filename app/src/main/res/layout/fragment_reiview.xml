@@ -42,7 +42,8 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="233dp"
+                android:layout_height="170dp"
+                android:layout_marginHorizontal="30dp"
                 app:cardCornerRadius="10dp">
 
                 <ImageView
@@ -75,7 +76,6 @@
                 android:text="@{article.title}"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
-
         </FrameLayout>
 
         <androidx.recyclerview.widget.RecyclerView

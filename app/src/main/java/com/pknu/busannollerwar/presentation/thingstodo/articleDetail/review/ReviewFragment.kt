@@ -71,16 +71,8 @@ class ReviewFragment : BaseFragment<FragmentReiviewBinding, ReviewViewModel>(
 
         if (requestCode == PICK_IMAGE && resultCode == Activity.RESULT_OK && data != null) {
             selectedImageUri = data.data!!
-            loadImageIntoImageView(binding.pictureIv, selectedImageUri!!)
         }
-
         imageList[nowIndex] = selectedImageUri.toString()
         reviewListAdapter.submitList(imageList)
-    }
-
-    private fun loadImageIntoImageView(imageView: ImageView, imageUri: Uri) {
-        Glide.with(requireContext())
-            .load(imageUri)
-            .into(imageView)
     }
 }
