@@ -14,6 +14,7 @@ class HomeFragment :
     BaseFragment<FragmentHomeBinding, HomeViewModel>(FragmentHomeBinding::inflate) {
 
     override val fragmentViewModel: HomeViewModel by viewModels()
+    val homeListAdapter: HomeListAdapter by lazy { HomeListAdapter() }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -29,6 +30,7 @@ class HomeFragment :
         }
 
         setRecyclerView()
+        homeListAdapter.submitList(listOf(1,2,3,4,5))
     }
 
     private fun handleEvent(event: HomeEvent) {
@@ -38,7 +40,8 @@ class HomeFragment :
     }
 
     private fun setRecyclerView() = binding.rvHome.apply {
-        adapter = myCommentListAdapter
+        adapter = homeListAdapter
         layoutManager = LinearLayoutManager(requireActivity())
+        addItemDecoration(HomeListDecoration(requireContext()))
     }
 }

@@ -49,7 +49,7 @@
             app:layout_constraintTop_toBottomOf="@id/LL_splash_logo"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            app:lottie_rawRes="@raw/raw_boggie_loading" />
+            app:lottie_rawRes="@raw/raw_boogie_loading" />
 
         <TextView
             android:id="@+id/tv_progress_text"
