@@ -3,8 +3,10 @@ package com.pknu.busannollerwar.presentation.home
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pknu.busannollerwar.databinding.FragmentHomeBinding
+import com.pknu.busannollerwar.presentation.home.contents.Contents
 import com.pknu.busannollerwar.presentation.util.BaseFragment
 import com.pknu.busannollerwar.presentation.util.repeatOnStarted
 import dagger.hilt.android.AndroidEntryPoint
@@ -14,7 +16,7 @@ class HomeFragment :
     BaseFragment<FragmentHomeBinding, HomeViewModel>(FragmentHomeBinding::inflate) {
 
     override val fragmentViewModel: HomeViewModel by viewModels()
-    val homeListAdapter: HomeListAdapter by lazy { HomeListAdapter() }
+    val homeListAdapter: HomeListAdapter by lazy { HomeListAdapter(fragmentViewModel) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -30,12 +32,16 @@ class HomeFragment :
         }
 
         setRecyclerView()
-        homeListAdapter.submitList(listOf(1, 2, 3))
+        homeListAdapter.submitList(listOf(Contents.KPOP, Contents.COOKING, Contents.HANBOK))
     }
 
     private fun handleEvent(event: HomeEvent) {
         when (event) {
-            is HomeEvent.NavigateToContents -> {}
+            is HomeEvent.NavigateToContents -> {
+                val action =
+                    HomeFragmentDirections.actionGlobalContentsFragment(event.contents.value)
+                findNavController().navigate(action)
+            }
         }
     }
 
